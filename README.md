@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Yash Chaudhari - Portfolio
 
 Professional portfolio website showcasing my work in Data Science,
@@ -81,3 +82,7 @@ This portfolio is designed for deployment using Netlify.
 ## Author
 
 Yash Chaudhari
+=======
+# yash-portfolio
+Personal Data Science &amp; Data Analytics Portfolio
+>>>>>>> 893e470c4deaa28e861a981ec7b28cf73eca7741
