@@ -1,0 +1,354 @@
+@media (max-width: 950px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 76px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 76px);
+        background: var(--background);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 5%;
+        transition: .3s;
+        border-top: 1px solid var(--border);
+    }
+
+    .nav-menu.open {
+        left: 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 450px;
+        margin: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .image-wrapper {
+        width: min(330px, 90vw);
+        height: 380px;
+    }
+
+    .skills-grid,
+    .about-cards,
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-card {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-top {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .education-card {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+}
+
+
+/* TABLETS */
+
+@media (max-width: 1100px) {
+    .technology-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .toolkit-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .toolkit-panel {
+        padding: 20px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .technology-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .technology-card {
+        min-height: 100px;
+        padding: 10px 4px;
+    }
+
+    .technology-card img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .technology-card span {
+        font-size: 10px;
+    }
+
+    .toolkit-heading h2 {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .technology-card,
+    .technology-card img {
+        transition: none;
+    }
+}
+
+/* REDUCE SPACE BETWEEN SKILLS AND TOOLKIT
+   ON TABLETS AND MOBILE DEVICES */
+
+@media (max-width: 768px) {
+    #skills {
+        padding-bottom: 15px;
+    }
+
+    #toolkit {
+        padding-top: 10px;
+    }
+}
+
+/* MOBILE SKILL CARD ANIMATION */
+
+@media (max-width: 650px) {
+
+    .skill-card.skill-active,
+    .skill-card.skill-active:hover {
+        transform: translateY(-4px) scale(1.015);
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .skill-card {
+        transition: none;
+    }
+}
+
+
+/* EXPERIENCE SECTION - TABLET & MOBILE */
+
+@media (max-width: 768px) {
+
+    .experience-item {
+        padding-left: 22px;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .experience-heading h3 {
+        font-size: 1.05rem;
+    }
+
+    .experience-date {
+        font-size: 0.72rem;
+        white-space: normal;
+    }
+
+    .experience-list li {
+        font-size: 0.88rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .experience-item {
+        padding-left: 18px;
+    }
+
+    .experience-list li {
+        margin-bottom: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .experience-item {
+        transition: none;
+    }
+
+    .experience-item:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body #toolkit .toolkit-panel {
+        padding: 18px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body #toolkit .toolkit-panel {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-actions {
+        gap: 10px;
+    }
+
+    .project-btn {
+        flex: 1 1 120px;
+        min-width: 0;
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+/* RESPONSIVE PROJECT CARDS */
+
+@media (max-width: 768px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid .project-card.vehicle-project {
+        grid-column: 1;
+    }
+
+    .vehicle-project .project-image {
+        height: 240px;
+    }
+
+    .vehicle-project .project-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .vehicle-project .project-image {
+        height: 200px;
+    }
+
+    .vehicle-project .project-content {
+        padding: 18px;
+    }
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 768px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .projects-grid .project-image {
+        height: 220px;
+    }
+
+    .projects-grid .project-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .projects-grid .project-image {
+        height: 190px;
+    }
+
+    .projects-grid .project-content {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contact-link {
+        padding: 15px 12px;
+        gap: 12px;
+    }
+
+    .contact-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .contact-details strong {
+        font-size: 12px;
+    }
+}
