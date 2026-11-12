@@ -29,7 +29,7 @@ I enjoy transforming complex datasets into actionable insights, developing predi
 - **Experience:** Data science and web development internships.
 - **Featured Work:** Real-world predictive analytics, NLP, and deep learning projects with repositories and demos.
 - **Certifications:** Industry learning credentials and virtual job simulations.
-- **Education & Contact:** Academic background, professional profiles, and a contact form.
+- **Education & Contact:** Academic background, professional profiles, and a contact form..
 
 ## Technology Stack
 
