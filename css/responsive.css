@@ -204,6 +204,26 @@
         justify-content: center;
         font-size: 0.85rem;
     }
+
+    .orb-1 {
+        width: 320px;
+        height: 320px;
+        filter: blur(80px);
+    }
+
+    .orb-2 {
+        width: 340px;
+        height: 340px;
+        filter: blur(80px);
+    }
+
+    .orb-3 {
+        display: none;
+    }
+
+    .cursor-spotlight {
+        display: none;
+    }
 }
 
 /* VERY SMALL PHONES (Max Width: 400px) */

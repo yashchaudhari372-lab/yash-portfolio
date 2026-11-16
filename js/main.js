@@ -384,4 +384,63 @@ document.addEventListener("DOMContentLoaded", () => {
             closeCertificateModal();
         }
     });
+
+    /* ==========================================================================
+       INTERACTIVE CURSOR SPOTLIGHT TRACKER
+       ========================================================================== */
+    const spotlight = document.getElementById("cursorSpotlight");
+    if (spotlight && window.matchMedia("(pointer: fine)").matches) {
+        let ticking = false;
+        window.addEventListener("pointermove", (e) => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    document.documentElement.style.setProperty("--mouse-x", `${e.clientX}px`);
+                    document.documentElement.style.setProperty("--mouse-y", `${e.clientY}px`);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    }
+
+    /* ==========================================================================
+       3D CARD TILT & SPECULAR SHEEN INTERACTION
+       ========================================================================== */
+    if (window.matchMedia("(pointer: fine)").matches) {
+        const tiltCards = document.querySelectorAll(
+            ".project-card, .certificate-card, .info-card, .comp-card, .skill-card, .education-card"
+        );
+
+        tiltCards.forEach((card) => {
+            let cardTicking = false;
+
+            card.addEventListener("pointermove", (e) => {
+                if (cardTicking) return;
+                cardTicking = true;
+
+                requestAnimationFrame(() => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    // Subtle, professional 3D tilt
+                    const rotateX = (((y - centerY) / centerY) * -5.5).toFixed(2);
+                    const rotateY = (((x - centerX) / centerX) * 5.5).toFixed(2);
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+                    card.style.setProperty("--card-mouse-x", `${x.toFixed(1)}px`);
+                    card.style.setProperty("--card-mouse-y", `${y.toFixed(1)}px`);
+                    cardTicking = false;
+                });
+            }, { passive: true });
+
+            card.addEventListener("pointerleave", () => {
+                card.style.transform = "";
+                card.style.setProperty("--card-mouse-x", "-500px");
+                card.style.setProperty("--card-mouse-y", "-500px");
+            });
+        });
+    }
 });

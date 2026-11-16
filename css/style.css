@@ -26,6 +26,13 @@
     --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
     --radius: 18px;
     --radius-sm: 10px;
+
+    /* GLASSMORPHISM & TRANSLUCENT SURFACES */
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(226, 232, 240, 0.85);
+    --glass-border-hover: rgba(37, 99, 235, 0.45);
+    --glass-blur: blur(14px);
+    --spotlight-color: rgba(37, 99, 235, 0.08);
 }
 
 /* ==========================================================================
@@ -109,6 +116,13 @@ html.dark-theme body {
     --border-hover: #3b507d;
     --shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
     --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.5);
+
+    /* GLASSMORPHISM DARK OVERRIDES */
+    --glass-bg: rgba(18, 29, 56, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-hover: rgba(96, 165, 250, 0.45);
+    --glass-blur: blur(16px);
+    --spotlight-color: rgba(37, 99, 235, 0.16);
 }
 
 /* ==========================================================================
@@ -173,6 +187,102 @@ button {
 
 .section-alt {
     background: var(--background-alt);
+    position: relative;
+}
+
+body.dark-theme .section-alt {
+    background: rgba(17, 29, 56, 0.45);
+}
+
+/* ==========================================================================
+   AMBIENT INTERACTIVE BACKGROUND & TECH GRID
+   ========================================================================== */
+
+.ambient-glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.24;
+    transition: background 0.6s ease;
+}
+
+body.dark-theme .ambient-glow {
+    opacity: 0.32;
+}
+
+.orb-1 {
+    width: 580px;
+    height: 580px;
+    top: -120px;
+    left: -100px;
+    background: var(--primary);
+    animation: float-orb-1 18s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+    width: 680px;
+    height: 680px;
+    bottom: 5%;
+    right: -150px;
+    background: var(--primary-light);
+    animation: float-orb-2 22s ease-in-out infinite alternate;
+}
+
+.orb-3 {
+    width: 500px;
+    height: 500px;
+    top: 45%;
+    left: 20%;
+    background: var(--primary-dark);
+    animation: float-orb-3 16s ease-in-out infinite alternate;
+}
+
+@keyframes float-orb-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(110px, 90px) scale(1.15); }
+}
+
+@keyframes float-orb-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-120px, -80px) scale(1.12); }
+}
+
+@keyframes float-orb-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(90px, -110px) scale(0.92); }
+}
+
+/* Modern High-Tech Grid Pattern */
+.bg-grid-pattern {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: radial-gradient(rgba(148, 163, 184, 0.16) 1.2px, transparent 1.2px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 95%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 95%);
+    opacity: 0.65;
+}
+
+body.dark-theme .bg-grid-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.09) 1.2px, transparent 1.2px);
+    opacity: 0.6;
+}
+
+/* Interactive Cursor Spotlight */
+.cursor-spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(650px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), var(--spotlight-color), transparent 65%);
+    transition: opacity 0.3s ease;
 }
 
 /* ==========================================================================
@@ -542,12 +652,19 @@ button {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
-    padding: 20px 22px;
-    background: var(--card);
-    border: 1px solid var(--border);
+    padding: 22px 24px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
+}
+
+.hero-stats:hover {
+    border-color: var(--primary);
+    box-shadow: 0 16px 36px var(--primary-glow);
 }
 
 .stat-item {
@@ -693,18 +810,22 @@ button {
 }
 
 .info-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     padding: 22px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .info-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    box-shadow: 0 12px 30px var(--primary-glow);
+    box-shadow: 0 14px 32px var(--primary-glow);
 }
 
 .info-card i {
@@ -756,18 +877,22 @@ button {
 }
 
 .comp-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     padding: 24px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .comp-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    box-shadow: 0 12px 28px var(--primary-glow);
+    box-shadow: 0 14px 30px var(--primary-glow);
 }
 
 .comp-icon {
@@ -806,17 +931,21 @@ button {
 
 .skill-card {
     padding: 30px;
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-card:hover {
     transform: translateY(-6px);
     border-color: var(--primary);
-    box-shadow: 0 12px 30px var(--primary-glow);
+    box-shadow: 0 16px 36px var(--primary-glow);
 }
 
 .skill-card > i {
@@ -861,8 +990,10 @@ button {
 }
 
 .toolkit-panel {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     padding: 36px;
     box-shadow: var(--shadow);
@@ -1108,20 +1239,25 @@ button {
 }
 
 .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+    position: relative;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
     border-color: var(--primary);
-    box-shadow: 0 16px 40px var(--primary-glow);
+    box-shadow: 0 18px 45px var(--primary-glow);
 }
 
 .project-image {
@@ -1291,20 +1427,25 @@ button {
 }
 
 .certificate-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+    position: relative;
 }
 
 .certificate-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
     border-color: var(--primary);
-    box-shadow: 0 16px 36px var(--primary-glow);
+    box-shadow: 0 18px 42px var(--primary-glow);
 }
 
 .cert-thumb-wrapper {
@@ -1453,8 +1594,10 @@ button {
    ========================================================================== */
 
 .education-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     padding: 34px;
     display: flex;
@@ -1462,6 +1605,8 @@ button {
     gap: 26px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .education-card:hover {
@@ -1574,8 +1719,10 @@ button {
     align-items: center;
     gap: 16px;
     padding: 16px 20px;
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 14px;
     transition: all 0.25s ease;
 }
@@ -1629,8 +1776,10 @@ button {
 
 /* Form Styles */
 #contactForm {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     padding: 34px;
     box-shadow: var(--shadow);
@@ -1668,12 +1817,61 @@ button {
 }
 
 /* ==========================================================================
+   CARD SPECULAR SHEEN & GLASS REFLECTION
+   ========================================================================== */
+
+.project-card::after,
+.certificate-card::after,
+.info-card::after,
+.comp-card::after,
+.skill-card::after,
+.education-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        420px circle at var(--card-mouse-x, -500px) var(--card-mouse-y, -500px),
+        rgba(255, 255, 255, 0.16),
+        transparent 65%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+body.dark-theme .project-card::after,
+body.dark-theme .certificate-card::after,
+body.dark-theme .info-card::after,
+body.dark-theme .comp-card::after,
+body.dark-theme .skill-card::after,
+body.dark-theme .education-card::after {
+    background: radial-gradient(
+        420px circle at var(--card-mouse-x, -500px) var(--card-mouse-y, -500px),
+        rgba(255, 255, 255, 0.08),
+        transparent 65%
+    );
+}
+
+.project-card:hover::after,
+.certificate-card:hover::after,
+.info-card:hover::after,
+.comp-card:hover::after,
+.skill-card:hover::after,
+.education-card:hover::after {
+    opacity: 1;
+}
+
+/* ==========================================================================
    FOOTER
    ========================================================================== */
 
 .footer {
-    background: var(--card);
-    border-top: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-top: 1px solid var(--glass-border);
     padding: 60px 0 30px;
 }
 
