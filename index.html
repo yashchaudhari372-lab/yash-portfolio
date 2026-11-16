@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-color="blue">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Yash Chaudhari | Data Scientist & Data Analyst</title>
-
-    <meta name="description"
-          content="Portfolio of Yash Chaudhari - Aspiring Data Scientist and Data Analyst skilled in Python, SQL, Power BI, Machine Learning, NLP and Data Analytics.">
-
-    <meta name="keywords"
-          content="Yash Chaudhari, Data Scientist, Data Analyst, Python, SQL, Power BI, Machine Learning, NLP">
-
+    <title>Yash Chaudhari | Data Scientist &amp; Machine Learning Engineer</title>
+    <meta name="description" content="Portfolio of Yash Chaudhari - Data Scientist, ML Engineer and AI Specialist skilled in Python, SQL, Machine Learning, Deep Learning, Generative AI, and Power BI.">
+    <meta name="keywords" content="Yash Chaudhari, Data Scientist, Machine Learning Engineer, Data Analyst, Python, SQL, Power BI, Deep Learning, NLP, Generative AI">
     <meta name="author" content="Yash Chaudhari">
+
+    <!-- Prevent Theme Flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+            const savedColor = localStorage.getItem('portfolio-accent-color') || 'blue';
+            document.documentElement.setAttribute('data-color', savedColor);
+        })();
+    </script>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
+<!-- HEADER & NAVIGATION -->
 <header class="header">
     <div class="container navbar">
-
         <a href="#home" class="logo">
             Yash<span>.</span>
         </a>
@@ -41,1851 +41,1207 @@
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Work</a>
+            <a href="#projects" class="nav-link">Projects</a>
             <a href="#certifications" class="nav-link">Certifications</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
 
         <div class="nav-actions">
+            <!-- Multi-Color Theme Palette Picker -->
+            <div class="palette-wrapper">
+                <button id="paletteToggle" class="palette-btn" aria-label="Change accent theme color" title="Theme Accent Colors">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+                <div class="palette-dropdown" id="paletteDropdown">
+                    <span class="palette-title">Accent Palette</span>
+                    <div class="palette-grid">
+                        <button class="palette-color-btn active" data-color="blue" style="background: #2563eb;" title="Electric Blue" aria-label="Blue Theme"></button>
+                        <button class="palette-color-btn" data-color="emerald" style="background: #059669;" title="Cyber Emerald" aria-label="Emerald Theme"></button>
+                        <button class="palette-color-btn" data-color="purple" style="background: #7c3aed;" title="Royal Violet" aria-label="Purple Theme"></button>
+                        <button class="palette-color-btn" data-color="amber" style="background: #ea580c;" title="Sunset Amber" aria-label="Amber Theme"></button>
+                        <button class="palette-color-btn" data-color="rose" style="background: #e11d48;" title="Ruby Rose" aria-label="Rose Theme"></button>
+                        <button class="palette-color-btn" data-color="cyan" style="background: #0284c7;" title="Neon Cyan" aria-label="Cyan Theme"></button>
+                    </div>
+                </div>
+            </div>
 
-            <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+            <!-- Light / Dark Mode Toggle -->
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
                 <i class="fa-solid fa-moon"></i>
             </button>
 
+            <!-- Mobile Menu Toggle -->
             <button id="menuToggle" class="menu-btn" aria-label="Open navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
         </div>
-
     </div>
 </header>
 
-
 <main>
 
-<!-- HERO -->
-
+<!-- HERO SECTION -->
 <section class="hero section" id="home">
-
     <div class="container hero-grid">
-
         <div class="hero-content reveal">
+            <div class="hero-status-pill">
+                <span class="status-indicator"></span>
+                <span>Open to Opportunities &bull; Data Science &amp; Analytics</span>
+            </div>
 
-            <p class="hero-tag">
-                Hello, I'm
-            </p>
+            <p class="hero-tag">Hello, I'm</p>
 
-            <h1>
-                Yash <span>Chaudhari</span>
-            </h1>
+            <h1>Yash <span>Chaudhari</span></h1>
 
-            <h2>
-                Aspiring Data Scientist & Data Analyst
+            <h2 class="hero-role-title">
+                <span id="roleTypedText">Data Scientist &amp; Machine Learning Engineer</span><span class="cursor">|</span>
             </h2>
 
             <p class="hero-description">
-                I transform data into insights and insights into intelligent solutions. 
-                As an aspiring Data Scientist & Data Analyst, I work with Python, SQL, 
-                Power BI, Machine Learning, and NLP to uncover patterns, build predictive
-                models, and create interactive data experiences. Passionate about solving
-                real-world problems through data-driven decision-making and intelligent solutions.
+                I bridge the gap between complex datasets and intelligent, production-ready solutions. 
+                Skilled in Python, SQL, Machine Learning, Deep Learning, and Generative AI, I build 
+                high-precision predictive models, automated analytics pipelines, and interactive web 
+                applications that solve real-world problems and drive measurable business decisions.
             </p>
 
             <div class="hero-buttons">
-
                 <a href="#projects" class="btn btn-primary">
                     <i class="fa-solid fa-diagram-project"></i>
-                    View My Work
+                    <span>Featured Projects</span>
                 </a>
 
-                <a href="assets/resume/Yash-Chaudhari-Resume.pdf"
-                   target="_blank"
-                   class="btn btn-outline">
-
+                <a href="assets/resume/Yash-Chaudhari-Resume.pdf" target="_blank" class="btn btn-outline">
                     <i class="fa-solid fa-file-pdf"></i>
-                    View Resume
-
+                    <span>View Resume</span>
                 </a>
 
+                <button id="copyEmailBtn" class="btn btn-subtle" title="Copy email address">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>Copy Email</span>
+                </button>
             </div>
 
             <div class="social-links">
-
-                <a href="https://github.com/yashchaudhari372-lab"
-                   target="_blank"
-                   aria-label="GitHub">
-
+                <a href="https://github.com/yashchaudhari372-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
                     <i class="fa-brands fa-github"></i>
-
                 </a>
-
-                <a href="https://www.linkedin.com/in/yashchaudhari08"
-                   target="_blank"
-                   aria-label="LinkedIn">
-
+                <a href="https://www.linkedin.com/in/yashchaudhari08" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                     <i class="fa-brands fa-linkedin"></i>
-
                 </a>
-
+                <a href="mailto:yashchaudhari372@gmail.com" aria-label="Send Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
             </div>
 
+            <!-- RECRUITER METRIC COUNTER -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Deployed ML/AI Apps</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">95.7%</span>
+                    <span class="stat-label">Max Model R² Score</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">16+</span>
+                    <span class="stat-label">Verified Credentials</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Data Rows Analyzed</span>
+                </div>
+            </div>
         </div>
-
 
         <div class="hero-image reveal">
-
             <div class="image-wrapper">
-                <img src="assets/images/profile/profile.jpg"
-                     alt="Yash Chaudhari">
+                <img src="assets/images/profile/profile.jpg" alt="Yash Chaudhari - Data Scientist">
+                <div class="image-badge">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>AI &amp; ML Enthusiast</span>
+                </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- ABOUT -->
-
+<!-- ABOUT SECTION -->
 <section class="section section-alt" id="about">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
             <span>About Me</span>
-
-            <h2>Who I Am</h2>
-
-            <p>
-                Get to know more about my background and career interests.
-            </p>
-
+            <h2>Transforming Data Into Intelligent Value</h2>
+            <p>A closer look at my background, practical philosophy, and technical strengths.</p>
         </div>
 
-
         <div class="about-grid">
-
             <div class="about-text reveal">
-
-                <h3>
-                    Data enthusiast focused on solving real-world problems.
-                </h3>
-
+                <h3>Data Practitioner Dedicated to High-Impact Solutions</h3>
                 <p>
-                    Aspiring Data Scientist and Data Analyst with hands-on 
-                    experience in Python, SQL, Power BI, Machine Learning, NLP
-                    Natural Language Processing
-                    and predictive analytics. Skilled in transforming complex
-                    datasets into meaningful insights through statistical analysis,
-                    data visualization, and intelligent predictive modeling.
+                    I am a Data Scientist and Analyst with hands-on expertise spanning statistical modeling, 
+                    deep learning architectures, natural language processing, and generative AI workflows. 
+                    I specialize in taking unstructured or complex transactional datasets and architecting end-to-end 
+                    solutions—from exploratory risk profiling and data validation to predictive models deployed on the cloud.
                 </p>
-
                 <p>
-                    I enjoy cleaning and exploring datasets, identifying meaningful
-                    patterns, creating interactive dashboards and developing
-                    machine-learning solutions that convert data into useful
-                    business insights.
+                    Having analyzed over 50,000+ retail records during my internship at Hisan Lab and completed 
+                    enterprise job simulations with companies like British Airways, Tata, and Deloitte, I combine 
+                    rigorous mathematical understanding with practical business communication.
                 </p>
-
-                <p>
-                    My goal is to begin my professional career in Data Science or
-                    Data Analytics where I can continue learning while contributing
-                    to data-driven business decisions.
-                </p>
-
                 <a href="#contact" class="btn btn-primary">
-                    Let's Connect
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Let's Connect</span>
                 </a>
-
             </div>
 
-
             <div class="about-cards reveal">
-
                 <div class="info-card">
                     <i class="fa-solid fa-graduation-cap"></i>
-
                     <div>
                         <span>Education</span>
-                        <strong>B.Tech Graduate</strong>
+                        <strong>B.Tech Graduate (2023–2026)</strong>
+                        <small>DBATU, Lonere, Maharashtra</small>
                     </div>
                 </div>
 
                 <div class="info-card">
                     <i class="fa-solid fa-location-dot"></i>
-
                     <div>
                         <span>Location</span>
-                        <strong>Pune, Maharashtra</strong>
+                        <strong>Pune, Maharashtra, India</strong>
+                        <small>Open to Remote &amp; Relocation</small>
                     </div>
                 </div>
 
                 <div class="info-card">
                     <i class="fa-solid fa-briefcase"></i>
-
                     <div>
-                        <span>Career Focus</span>
-                        <strong>Data Science & Analytics</strong>
+                        <span>Core Specialization</span>
+                        <strong>Data Science, ML &amp; GenAI</strong>
+                        <small>Predictive &amp; Business Analytics</small>
                     </div>
                 </div>
 
                 <div class="info-card">
                     <i class="fa-solid fa-code"></i>
-
                     <div>
-                        <span>Primary Language</span>
-                        <strong>Python</strong>
+                        <span>Core Languages</span>
+                        <strong>Python &amp; SQL</strong>
+                        <small>Production Scripts &amp; Queries</small>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
+        <!-- WHAT I BRING TO YOUR TEAM -->
+        <div class="competencies-container reveal">
+            <h3 class="competencies-title">What I Bring To Your Team</h3>
+            <div class="competencies-grid">
+                <div class="comp-card">
+                    <div class="comp-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h4>End-to-End ML Pipelines</h4>
+                    <p>Proficient in EDA, feature engineering, cross-validation, hyperparameter tuning, and containerized/cloud deployment (Flask, Streamlit, Vercel, Render).</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h4>Generative AI &amp; LLMs</h4>
+                    <p>Skilled in prompt optimization, LLM workflow automation, Databricks Generative AI fundamentals, and responsible AI system design.</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-icon"><i class="fa-solid fa-database"></i></div>
+                    <h4>Analytics &amp; Workflow Automation</h4>
+                    <p>Experienced in complex SQL aggregation, automated Pandas ETL scripts (saving 80%+ manual time), and data anomaly detection.</p>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Executive Storytelling &amp; BI</h4>
+                    <p>Creating interactive Power BI and Google Analytics dashboards that translate multi-dimensional metrics into actionable C-suite strategy.</p>
+                </div>
+            </div>
+        </div>
     </div>
-
 </section>
 
-
-<!-- SKILLS -->
-
+<!-- SKILLS SECTION -->
 <section class="section" id="skills">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
             <span>Technical Skills</span>
-
-            <h2>My Technology Stack</h2>
-
-            <p>
-                Technologies and tools I use for analytics and machine learning.
-            </p>
-
+            <h2>Core Competencies &amp; Stack</h2>
+            <p>Technologies, libraries, and frameworks I leverage to engineer intelligent solutions.</p>
         </div>
 
-
         <div class="skills-grid">
-
             <div class="skill-card reveal">
-
                 <i class="fa-brands fa-python"></i>
-
-                <h3>Programming</h3>
-
+                <h3>Languages &amp; Querying</h3>
                 <div class="skill-tags">
                     <span>Python</span>
-                    <span>SQL</span>
+                    <span>SQL (MySQL)</span>
+                    <span>DAX</span>
+                    <span>Bash</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card reveal">
-
                 <i class="fa-solid fa-chart-column"></i>
-
-                <h3>Data Analytics</h3>
-
+                <h3>Data Analytics &amp; BI</h3>
                 <div class="skill-tags">
                     <span>Pandas</span>
                     <span>NumPy</span>
-                    <span>EDA</span>
-                    <span>Statistics</span>
+                    <span>Power BI</span>
+                    <span>Google Analytics</span>
                     <span>Excel</span>
+                    <span>EDA</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card reveal">
-
                 <i class="fa-solid fa-brain"></i>
-
                 <h3>Machine Learning</h3>
-
                 <div class="skill-tags">
                     <span>Scikit-learn</span>
                     <span>XGBoost</span>
-                    <span>Regression</span>
+                    <span>Random Forest</span>
+                    <span>Linear Regression</span>
                     <span>Classification</span>
                     <span>Feature Engineering</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card reveal">
-
-                <i class="fa-solid fa-robot"></i>
-
-                <h3>Deep Learning & NLP</h3>
-
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Deep Learning &amp; NLP</h3>
                 <div class="skill-tags">
-                    <span>ANN</span>
-                    <span>RNN</span>
                     <span>TensorFlow</span>
                     <span>Keras</span>
-                    <span>NLP</span>
+                    <span>ANN</span>
+                    <span>RNN</span>
+                    <span>PyTorch</span>
+                    <span>Text Classification</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card reveal">
-
-                <i class="fa-solid fa-chart-pie"></i>
-
-                <h3>Visualization</h3>
-
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Generative AI &amp; LLMs</h3>
                 <div class="skill-tags">
-                    <span>Power BI</span>
-                    <span>Matplotlib</span>
-                    <span>Seaborn</span>
+                    <span>Prompt Engineering</span>
+                    <span>Databricks GenAI</span>
+                    <span>Google AI Studio</span>
+                    <span>Microsoft Fabric AI</span>
+                    <span>Hugging Face</span>
                 </div>
-
             </div>
 
-
             <div class="skill-card reveal">
-
-                <i class="fa-solid fa-database"></i>
-
-                <h3>Tools & Databases</h3>
-
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <h3>Deployment &amp; Cloud</h3>
                 <div class="skill-tags">
-                    <span>MySQL</span>
-                    <span>Git</span>
-                    <span>GitHub</span>
-                    <span>Flask</span>
                     <span>Streamlit</span>
+                    <span>Flask</span>
+                    <span>Vercel</span>
+                    <span>Render</span>
+                    <span>Oracle Cloud (OCI)</span>
+                    <span>Git &amp; GitHub</span>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- TOOLS & TECHNOLOGIES -->
-
+<!-- TOOLKIT ICON GRID -->
 <section class="section toolkit-section" id="toolkit">
-
     <div class="container">
-
         <div class="toolkit-panel reveal">
-
             <div class="toolkit-heading">
                 <div>
                     <span class="toolkit-eyebrow">TOOLKIT</span>
-
-                    <h2>Tools & Technologies</h2>
+                    <h2>Tools &amp; Technologies</h2>
                 </div>
-
-                <p>
-                    Technologies and frameworks I work with across
-                    data analysis, machine learning, AI and
-                    application development.
-                </p>
+                <p>Interactive tool ecosystem used across data analysis, machine learning, AI, and cloud deployment.</p>
             </div>
 
             <div class="technology-grid">
-
-                <!-- Programming -->
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                        alt="Python">
-                    <span>Python</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                        alt="MySQL">
-                    <span>MySQL</span>
-                </div>
-
-                <!-- Analytics -->
-                <div class="technology-card">
-                    <img src="https://api.iconify.design/logos/microsoft-power-bi.svg"
-                        alt="Power BI" loading="lazy">
-                    <span>Power BI</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://api.iconify.design/vscode-icons/file-type-excel.svg"
-                        alt="Excel" loading="lazy">
-                    <span>Excel</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/jupyter"
-                        alt="Jupyter">
-                    <span>Jupyter</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
-                        alt="Pandas">
-                    <span>Pandas</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg"
-                        alt="NumPy">
-                    <span>NumPy</span>
-                </div>
-
-                <!-- Machine Learning -->
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/scikitlearn"
-                        alt="Scikit-learn">
-                    <span>Scikit-learn</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/tensorflow"
-                        alt="TensorFlow">
-                    <span>TensorFlow</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/keras"
-                        alt="Keras">
-                    <span>Keras</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/pytorch"
-                        alt="PyTorch" loading="lazy">
-                    <span>PyTorch</span>
-                </div>
-
-                <!-- DEEP LEARNING -->
-
-                <div class="technology-card">
-                    <div class="technology-symbol">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <span>Deep Learning</span>
-                </div>
-
-                <!-- NLP -->
-
-                <div class="technology-card">
-                    <div class="technology-symbol">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <span>NLP</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg"
-                        alt="Matplotlib" loading="lazy">
-                    <span>Matplotlib</span>
-                </div>
-
-                <div class="technology-card">
-                    <img
-                        src="https://seaborn.pydata.org/_static/logo-mark-lightbg.svg"
-                        alt="Seaborn Logo"
-                        loading="lazy"
-                    >
-                    <span>Seaborn</span>
-                </div>
-
-                <!-- Applications -->
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/streamlit"
-                        alt="Streamlit">
-                    <span>Streamlit</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/flask/ffffff"
-                        alt="Flask">
-                    <span>Flask</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/vercel/ffffff"
-                        alt="Vercel" loading="lazy">
-                    <span>Vercel</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/render"
-                        alt="Render" loading="lazy">
-                    <span>Render</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
-                        alt="AWS" loading="lazy">
-                    <span>AWS</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/huggingface"
-                        alt="Hugging Face" loading="lazy">
-                    <span>Hugging Face</span>
-                </div>
-
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/git"
-                        alt="Git">
-                    <span>Git</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/github/ffffff"
-                        alt="GitHub">
-                    <span>GitHub</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
-                        alt="VS Code" loading="lazy">
-                    <span>VS Code</span>
-                </div>       
-
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/html5"
-                        alt="HTML">
-                    <span>HTML</span>
-                </div>
-
-                <div class="technology-card">
-                    <img src="https://cdn.simpleicons.org/css"
-                        alt="CSS">
-                    <span>CSS</span>
-                </div>
-
+                <div class="technology-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" loading="lazy"><span>Python</span></div>
+                <div class="technology-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy"><span>MySQL</span></div>
+                <div class="technology-card"><img src="https://api.iconify.design/logos/microsoft-power-bi.svg" alt="Power BI" loading="lazy"><span>Power BI</span></div>
+                <div class="technology-card"><img src="https://api.iconify.design/vscode-icons/file-type-excel.svg" alt="Excel" loading="lazy"><span>Excel</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/jupyter" alt="Jupyter" loading="lazy"><span>Jupyter</span></div>
+                <div class="technology-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" loading="lazy"><span>Pandas</span></div>
+                <div class="technology-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" loading="lazy"><span>NumPy</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/scikitlearn" alt="Scikit-learn" loading="lazy"><span>Scikit-learn</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/tensorflow" alt="TensorFlow" loading="lazy"><span>TensorFlow</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/keras" alt="Keras" loading="lazy"><span>Keras</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/pytorch" alt="PyTorch" loading="lazy"><span>PyTorch</span></div>
+                <div class="technology-card"><div class="technology-symbol"><i class="fa-solid fa-brain"></i></div><span>Deep Learning</span></div>
+                <div class="technology-card"><div class="technology-symbol"><i class="fa-solid fa-language"></i></div><span>NLP</span></div>
+                <div class="technology-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" loading="lazy"><span>Matplotlib</span></div>
+                <div class="technology-card"><img src="https://seaborn.pydata.org/_static/logo-mark-lightbg.svg" alt="Seaborn" loading="lazy"><span>Seaborn</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/streamlit" alt="Streamlit" loading="lazy"><span>Streamlit</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/flask/ffffff" alt="Flask" loading="lazy"><span>Flask</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Vercel" loading="lazy"><span>Vercel</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/render" alt="Render" loading="lazy"><span>Render</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/databricks" alt="Databricks" loading="lazy"><span>Databricks</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/googlecloud" alt="Google Cloud" loading="lazy"><span>Google Cloud</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/huggingface" alt="Hugging Face" loading="lazy"><span>Hugging Face</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/git" alt="Git" loading="lazy"><span>Git</span></div>
+                <div class="technology-card"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" loading="lazy"><span>GitHub</span></div>
+                <div class="technology-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy"><span>VS Code</span></div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-
-<!-- EXPERIENCE -->
-
+<!-- PROFESSIONAL EXPERIENCE SECTION -->
 <section class="section section-alt" id="experience">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
             <span>Experience</span>
-
             <h2>Professional Experience</h2>
-
+            <p>Industry internships and practical business contributions.</p>
         </div>
 
-
         <div class="experience-timeline">
-
+            <!-- ROLE 1: HISAN LAB -->
             <article class="experience-item reveal">
-
                 <div class="experience-dot"></div>
-
                 <div class="experience-header">
-
                     <div class="experience-heading">
                         <h3>Data Science Intern</h3>
                         <h4>Hisan Lab Pvt. Ltd.</h4>
                     </div>
-
-                    <span class="experience-date">
-                        JUNE 2026 – PRESENT
-                    </span>
-
+                    <span class="experience-date">JUNE 2026 – PRESENT</span>
                 </div>
-
                 <ul class="experience-list">
-
-                    <li>
-                        Analyzed retail sales data
-                        (50,000+ transactions across 20+
-                        product categories) using SQL and
-                        Python to identify seasonal demand
-                        trends and slow-moving inventory.
-                    </li>
-
-                    <li>
-                        Built a demand forecasting model
-                        (Linear Regression + ARIMA) that
-                        improved forecast accuracy by ~15%
-                        compared to the team's existing
-                        manual estimates.
-                    </li>
-
-                    <li>
-                        Automated the weekly sales-reporting
-                        workflow using Python (Pandas),
-                        cutting manual reporting effort from
-                        ~6 hours to under 1 hour per week.
-                    </li>
-
-                    <li>
-                        Designed a Power BI dashboard tracking
-                        revenue, stock levels, and top/bottom-
-                        performing SKUs across 10+ store
-                        locations, used by the team for
-                        weekly review meetings.
-                    </li>
-
-                    <li>
-                        Flagged inventory mismatches through
-                        data validation checks, contributing
-                        to a reduction in stockout instances
-                        during the internship period.
-                    </li>
-
+                    <li>Analyzed retail sales data (<strong>50,000+ transactions across 20+ product categories</strong>) using SQL and Python to identify seasonal demand trends and slow-moving inventory.</li>
+                    <li>Built an automated demand forecasting model (Linear Regression + ARIMA) that <strong>improved forecast accuracy by ~15%</strong> compared to manual baseline estimates.</li>
+                    <li>Automated the weekly sales-reporting workflow using Python (Pandas), <strong>cutting manual reporting effort from ~6 hours to under 1 hour per week (83% reduction)</strong>.</li>
+                    <li>Designed an interactive Power BI dashboard tracking revenue, stock turnover, and top/bottom-performing SKUs across <strong>10+ store locations</strong> for executive review.</li>
+                    <li>Flagged inventory mismatches through rigorous data validation checks, directly lowering stockout instances during the internship cycle.</li>
                 </ul>
-
             </article>
 
-            
-            <!-- ========================================
-                EXPERIENCE 2 - WEB DEVELOPMENT INTERN
-            ======================================== -->
-
-            <div class="experience-item reveal">
-
+            <!-- ROLE 2: PRODIGY INFOTECH -->
+            <article class="experience-item reveal">
+                <div class="experience-dot"></div>
                 <div class="experience-header">
-
-                    <div class="experience-title">
-
+                    <div class="experience-heading">
                         <h3>Web Development Intern</h3>
-
-                        <span class="experience-company">
-                            Prodigy InfoTech
-                        </span>
-
+                        <h4>Prodigy InfoTech</h4>
                     </div>
-
-                    <span class="experience-date">
-                        OCTOBER 2025 – NOVEMBER 2025
-                    </span>
-
+                    <span class="experience-date">OCTOBER 2025 – NOVEMBER 2025</span>
                 </div>
-
-                <ul class="experience-details">
-
-                    <li>
-                        Developed responsive and interactive web
-                        applications using HTML, CSS, and JavaScript,
-                        focusing on clean user interfaces and
-                        cross-device compatibility.
-                    </li>
-
-                    <li>
-                        Built a functional Stopwatch Web Application
-                        featuring start, pause, reset, and time-tracking
-                        functionality using JavaScript.
-                    </li>
-
-                    <li>
-                        Designed a responsive Landing Page with
-                        structured navigation, modern layouts,
-                        and interactive UI components.
-                    </li>
-
-                    <li>
-                        Applied DOM manipulation, event handling,
-                        and CSS styling techniques to improve
-                        application functionality and user experience.
-                    </li>
-
-                    <li>
-                        Used browser developer tools to test,
-                        debug, and optimize web applications
-                        for usability and responsiveness.
-                    </li>
-
+                <ul class="experience-list">
+                    <li>Developed responsive and interactive web interfaces using HTML5, CSS3, and modern JavaScript, focusing on mobile-first design and cross-browser reliability.</li>
+                    <li>Built a precision Stopwatch Web Application featuring start, pause, reset, and lap-tracking functionality through modular JavaScript event loops.</li>
+                    <li>Designed high-converting landing pages with structured UI components, modern layouts, and optimized asset loading.</li>
                 </ul>
+                <div class="exp-actions">
+                    <button class="btn-verify-exp" onclick="openCertificateModal('Web Development Internship', 'Prodigy InfoTech', 'assets/images/certificates/prodigy-web-development.jpg', 'Completed: November 2025')">
+                        <i class="fa-solid fa-award"></i>
+                        <span>View Completion Certificate</span>
+                    </button>
+                </div>
+            </article>
 
-            </div>
-
-
+            <!-- ROLE 3: YBI FOUNDATION -->
+            <article class="experience-item reveal">
+                <div class="experience-dot"></div>
+                <div class="experience-header">
+                    <div class="experience-heading">
+                        <h3>Data Science &amp; Machine Learning Intern</h3>
+                        <h4>Ybi Foundation</h4>
+                    </div>
+                    <span class="experience-date">AUGUST 2024</span>
+                </div>
+                <ul class="experience-list">
+                    <li>Completed an intensive 1-month hands-on machine learning program covering supervised and unsupervised algorithms, EDA, and model evaluation metrics.</li>
+                    <li>Trained predictive classification models and regression pipelines on benchmark datasets using Scikit-learn and Python.</li>
+                </ul>
+                <div class="exp-actions">
+                    <button class="btn-verify-exp" onclick="openCertificateModal('Data Science and Machine Learning Internship', 'Ybi Foundation', 'assets/images/certificates/ybi-data-science-ml.jpg', 'Completed: August 2024')">
+                        <i class="fa-solid fa-award"></i>
+                        <span>View Completion Certificate</span>
+                    </button>
+                </div>
+            </article>
         </div>
-
     </div>
 </section>
 
-
-<!-- PROJECTS -->
-
+<!-- FEATURED PROJECTS SECTION -->
 <section class="section" id="projects">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
             <span>Portfolio</span>
-
             <h2>Featured Projects</h2>
-
-            <p>
-                Some of my Data Science, Machine Learning and Analytics projects.
-            </p>
-
+            <p>Production-ready Machine Learning, Deep Learning, and Analytics web applications.</p>
         </div>
 
+        <!-- Project Filter Buttons -->
+        <div class="filter-nav reveal">
+            <button class="filter-btn active" data-project-filter="all">All Projects (6)</button>
+            <button class="filter-btn" data-project-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-project-filter="dl">Deep Learning &amp; NLP</button>
+            <button class="filter-btn" data-project-filter="analytics">Analytics &amp; Prediction</button>
+        </div>
 
         <div class="projects-grid">
-
-            <!-- PROJECT 1 -->
-
-            <article class="project-card reveal">
-
+            <!-- PROJECT 1: SENTIMENT ANALYSIS -->
+            <article class="project-card reveal" data-project-category="dl">
                 <div class="project-image">
-
-                    <img
-                        src="assets/images/projects/sentiment-analysis.png"
-                        alt="Sentiment Analysis Web Application Screenshot"
-                        loading="lazy"
-                    >
+                    <img src="assets/images/projects/sentiment-analysis.png" alt="Sentiment Analysis Web App Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Real-time NLP</span>
                 </div>
-
                 <div class="project-content">
-
-                    <span class="project-type">
-                        Natural Language Processing
-                    </span>
-
+                    <span class="project-type">Natural Language Processing</span>
                     <h3>Sentiment Analysis</h3>
-
-                    <p>
-                        NLP-based application that processes textual input and
-                        predicts sentiment using a trained machine-learning model.
-                    </p>
-
+                    <p>NLP-based application that processes raw textual reviews or statements and predicts sentiment polarity using a trained text-classification model with high precision.</p>
                     <div class="tech-stack">
                         <span>Python</span>
                         <span>NLP</span>
                         <span>Scikit-learn</span>
                         <span>Flask</span>
+                        <span>Vercel</span>
                     </div>
-
-                    
-                    <!-- SENTIMENT ANALYSIS PROJECT BUTTONS -->
-
                     <div class="project-actions">
-
-                        <!-- GitHub Button -->
-                        <a
-                            href="https://github.com/yashchaudhari372-lab/Sentiment_Analysis"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn github-btn"
-                            aria-label="View Sentiment Analysis on GitHub"
-                        >
+                        <a href="https://github.com/yashchaudhari372-lab/Sentiment_Analysis" target="_blank" rel="noopener noreferrer" class="project-btn github-btn" aria-label="View Sentiment Analysis on GitHub">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
                         </a>
-
-                        <!-- Live Demo Button -->
-                        <a
-                            href="https://sentiment-analysis-livid-nine.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn demo-btn"
-                            aria-label="Open Sentiment Analysis Live Demo"
-                        >
+                        <a href="https://sentiment-analysis-livid-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" aria-label="Open Sentiment Analysis Live Demo">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             <span>Live Demo</span>
                         </a>
-
                     </div>
-
-
                 </div>
-
             </article>
 
-
-            <!-- PROJECT 2 -->
-
-
-            <article class="project-card reveal">
-
+            <!-- PROJECT 2: LOAN APPROVAL PREDICTION -->
+            <article class="project-card reveal" data-project-category="ml">
                 <div class="project-image">
-
-                    <img
-                        src="assets/images/projects/loan-approval.png"
-                        alt="Loan Approval Prediction System Screenshot"
-                        loading="lazy"
-                    >
+                    <img src="assets/images/projects/loan-approval.png" alt="Loan Approval Prediction System Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">XGBoost Classifier</span>
                 </div>
-
                 <div class="project-content">
-
-                    <span class="project-type">
-                        Machine Learning
-                    </span>
-
+                    <span class="project-type">Machine Learning &bull; Classification</span>
                     <h3>Loan Approval Prediction System</h3>
-
-                    <p>
-                        Classification system designed to predict loan approval
-                        decisions from applicant financial and demographic
-                        information.
-                    </p>
-
+                    <p>Financial risk classification system predicting creditworthiness and loan approval decisions based on applicant demographics, credit history, and asset evaluations.</p>
                     <div class="tech-stack">
                         <span>Python</span>
                         <span>XGBoost</span>
                         <span>Scikit-learn</span>
                         <span>Flask</span>
+                        <span>Render</span>
                     </div>
-
-                    
-                    <!-- LOAN APPROVAL PREDICTION PROJECT BUTTONS -->
-
                     <div class="project-actions">
-
-                        <!-- GitHub Button -->
-                        <a
-                            href="https://github.com/yashchaudhari372-lab/Loan_Approval_Prediction_System"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn github-btn"
-                            aria-label="View Loan Approval Prediction on GitHub"
-                        >
+                        <a href="https://github.com/yashchaudhari372-lab/Loan_Approval_Prediction_System" target="_blank" rel="noopener noreferrer" class="project-btn github-btn" aria-label="View Loan Approval Prediction on GitHub">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
                         </a>
-
-                        <!-- Live Demo Button -->
-                        <a
-                            href="https://loan-approval-prediction-xgboost-66ol.onrender.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn demo-btn"
-                            aria-label="Open Loan Approval Prediction Live Demo"
-                        >
+                        <a href="https://loan-approval-prediction-xgboost-66ol.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" aria-label="Open Loan Approval Prediction Live Demo">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             <span>Live Demo</span>
                         </a>
-
                     </div>
-
                 </div>
-
             </article>
 
-            
-            <!-- PROJECT 3 - SPAM DETECTION USING RNN -->
-
-            <article class="project-card reveal">
-
-                <!-- Project Screenshot -->
+            <!-- PROJECT 3: SPAM DETECTION USING RNN -->
+            <article class="project-card reveal" data-project-category="dl">
                 <div class="project-image">
-
-                    <img
-                        src="assets/images/projects/spam-detection.png"
-                        alt="Spam Detection using RNN Web Application Screenshot"
-                        loading="lazy"
-                    >
-
+                    <img src="assets/images/projects/spam-detection.png" alt="Spam Detection using RNN Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Recurrent Neural Net</span>
                 </div>
-
                 <div class="project-content">
-
-                    <!-- Project Category -->
-                    <span class="project-type">
-                        Deep Learning & Natural Language Processing
-                    </span>
-
-                    <!-- Project Title -->
+                    <span class="project-type">Deep Learning &bull; NLP</span>
                     <h3>Spam Detection using RNN</h3>
-
-                    <!-- Project Description -->
-                    <p>
-                        Deep learning-based text classification application
-                        that uses a Recurrent Neural Network (RNN) to
-                        classify messages as Spam or Not Spam through
-                        natural language processing.
-                    </p>
-
-                    <!-- Technologies Used -->
+                    <p>Deep learning sequential text classifier utilizing a Recurrent Neural Network (RNN) to analyze token sequences and classify messages with high sensitivity against spam patterns.</p>
                     <div class="tech-stack">
-
                         <span>Python</span>
-                        <span>Deep Learning</span>
-                        <span>RNN</span>
                         <span>TensorFlow</span>
                         <span>Keras</span>
-                        <span>NLP</span>
+                        <span>RNN</span>
                         <span>Streamlit</span>
-
                     </div>
-
-                    <!-- PROJECT BUTTONS -->
                     <div class="project-actions">
-
-                        <!-- GitHub Button -->
-                        <a
-                            href="https://github.com/yashchaudhari372-lab/Spam-Detection-using-RNN"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn github-btn"
-                            aria-label="View Spam Detection using RNN on GitHub"
-                        >
+                        <a href="https://github.com/yashchaudhari372-lab/Spam-Detection-using-RNN" target="_blank" rel="noopener noreferrer" class="project-btn github-btn" aria-label="View Spam Detection on GitHub">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
                         </a>
-
-                        <!-- Live Demo Button -->
-                        <a
-                            href="https://spam-not-spam-detection-by-rnn-g96x9yxtjkuhxtdabkgvyc.streamlit.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn demo-btn"
-                            aria-label="Open Spam Detection using RNN Live Demo"
-                        >
+                        <a href="https://spam-not-spam-detection-by-rnn-g96x9yxtjkuhxtdabkgvyc.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" aria-label="Open Spam Detection Live Demo">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             <span>Live Demo</span>
                         </a>
-
                     </div>
-
                 </div>
-
             </article>
 
-            
-            <!-- PROJECT 4 - CUSTOMER CHURN ANALYSIS USING ANN -->
-
-            <article class="project-card reveal">
-
-                <!-- Project Screenshot -->
+            <!-- PROJECT 4: CUSTOMER CHURN ANALYSIS USING ANN -->
+            <article class="project-card reveal" data-project-category="dl">
                 <div class="project-image">
-                    <img
-                        src="assets/images/projects/customer-churn-ann.png"
-                        alt="Customer Churn Analysis using ANN Dashboard"
-                        loading="lazy"
-                    >
+                    <img src="assets/images/projects/customer-churn-ann.png" alt="Customer Churn Analysis using ANN Dashboard" loading="lazy">
+                    <span class="project-highlight-badge">Neural Network (ANN)</span>
                 </div>
-
                 <div class="project-content">
-
-                    <!-- Project Category -->
-                    <span class="project-type">
-                        Deep Learning & Predictive Analytics
-                    </span>
-
-                    <!-- Project Title -->
+                    <span class="project-type">Deep Learning &bull; Retention Analytics</span>
                     <h3>Customer Churn Analysis using ANN</h3>
-
-                    <!-- Project Description -->
-                    <p>
-                        Developed a deep learning-based customer churn
-                        prediction application using an Artificial Neural
-                        Network (ANN) to analyze customer information,
-                        identify potential churn risks, and support
-                        data-driven customer retention decisions.
-                    </p>
-
-                    <!-- Technologies Used -->
+                    <p>End-to-end churn prediction platform engineered with an Artificial Neural Network (ANN) that detects behavioral indicators of customer attrition to support targeted retention.</p>
                     <div class="tech-stack">
                         <span>Python</span>
                         <span>ANN</span>
                         <span>TensorFlow</span>
                         <span>Keras</span>
-                        <span>Deep Learning</span>
+                        <span>Vercel</span>
                     </div>
-
-                    <!-- PROJECT BUTTONS -->
                     <div class="project-actions">
-
-                        <!-- GitHub Button -->
-                        <a
-                            href="https://github.com/yashchaudhari372-lab/Customer_Churn_Analysis_using_ANN"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn github-btn"
-                            aria-label="View Customer Churn Analysis on GitHub"
-                        >
+                        <a href="https://github.com/yashchaudhari372-lab/Customer_Churn_Analysis_using_ANN" target="_blank" rel="noopener noreferrer" class="project-btn github-btn" aria-label="View Customer Churn Analysis on GitHub">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
                         </a>
-
-                        <!-- Live Demo Button -->
-                        <a
-                            href="https://customer-churn-analysis-using-ann-1.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn demo-btn"
-                            aria-label="Open Customer Churn Analysis Live Demo"
-                        >
+                        <a href="https://customer-churn-analysis-using-ann-1.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" aria-label="Open Customer Churn Analysis Live Demo">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             <span>Live Demo</span>
                         </a>
-
                     </div>
-
                 </div>
-
             </article>
 
-            
             <!-- PROJECT 5: VEHICLE PRICE PREDICTION SYSTEM -->
-
-            <article class="project-card reveal">
-
-                <!-- Project Screenshot -->
+            <article class="project-card reveal" data-project-category="ml">
                 <div class="project-image">
-                    <img
-                        src="assets/images/projects/vehicle-price.png"
-                        alt="Vehicle Price Prediction System Screenshot"
-                        loading="lazy"
-                    >
+                    <img src="assets/images/projects/vehicle-price.png" alt="Vehicle Price Prediction System Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">95.67% R² Score</span>
                 </div>
-
                 <div class="project-content">
-
-                    <!-- Project Category -->
-                    <span class="project-type">
-                        Machine Learning | Regression
-                    </span>
-
-                    <!-- Project Title -->
+                    <span class="project-type">Machine Learning &bull; Regression</span>
                     <h3>Vehicle Price Prediction System</h3>
-
-                    <!-- Project Description -->
-                    <p>
-                        Developed a machine learning-based vehicle price
-                        prediction system using Random Forest Regression,
-                        achieving a 95.67% R² score. The application
-                        estimates vehicle prices based on relevant
-                        vehicle attributes, demonstrating predictive
-                        modeling and regression techniques.
-                    </p>
-
-                    <!-- Technology Stack -->
+                    <p>High-precision vehicle price valuation engine using Random Forest Regression, scoring a 95.67% R² on holdout validation by factoring mileage, engine capacity, age, and brand equity.</p>
                     <div class="tech-stack">
                         <span>Python</span>
                         <span>Random Forest</span>
                         <span>Scikit-learn</span>
                         <span>Regression</span>
+                        <span>Vercel</span>
                     </div>
-
-                    <!-- VEHICLE PRICE PREDICTION BUTTONS -->
                     <div class="project-actions">
-
-                        <!-- GitHub Button -->
-                        <a
-                            href="https://github.com/yashchaudhari372-lab/Vehicle_Price_Prediction_System"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn github-btn"
-                            aria-label="View Vehicle Price Prediction on GitHub"
-                        >
+                        <a href="https://github.com/yashchaudhari372-lab/Vehicle_Price_Prediction_System" target="_blank" rel="noopener noreferrer" class="project-btn github-btn" aria-label="View Vehicle Price Prediction on GitHub">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
                         </a>
-
-                        <!-- Live Demo Button -->
-                        <a
-                            href="https://vehicle-price-prediction-random-for.vercel.app/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn demo-btn"
-                            aria-label="Open Vehicle Price Prediction Live Demo"
-                        >
+                        <a href="https://vehicle-price-prediction-random-for.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" aria-label="Open Vehicle Price Prediction Live Demo">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             <span>Live Demo</span>
                         </a>
-
                     </div>
-
                 </div>
-
             </article>
 
-            
             <!-- PROJECT 6: MHT-CET COLLEGE PREDICTOR -->
-
-            <article class="project-card reveal">
-
-                <!-- PROJECT IMAGE -->
+            <article class="project-card reveal" data-project-category="analytics">
                 <div class="project-image">
-
-                    <img
-                        src="assets/images/projects/mht-cet-college-predictor.png"
-                        alt="MHT-CET College Predictor and Admission Analytics System Dashboard"
-                        loading="lazy"
-                    >
-
+                    <img src="assets/images/projects/mht-cet-college-predictor.png" alt="MHT-CET College Predictor Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Admission Analytics</span>
                 </div>
-
-                <!-- PROJECT CONTENT -->
                 <div class="project-content">
-
-                    <!-- PROJECT CATEGORY -->
-                    <span class="project-type">
-                        Education Analytics & Predictive Analytics
-                    </span>
-
-                    <!-- PROJECT TITLE -->
-                    <h3>
-                        MHT-CET College Predictor & Admission
-                        Analytics System
-                    </h3>
-
-                    <!-- PROJECT DESCRIPTION -->
-                    <p>
-                        Data-driven admission analytics application
-                        designed to help MHT-CET aspirants explore
-                        engineering college options using entrance
-                        examination scores, ranks, categories, and
-                        historical admission cutoff trends.
-                        Provides college recommendations and
-                        admission insights to support informed
-                        decision-making.
-                    </p>
-
-                    <!-- TECHNOLOGY STACK -->
+                    <span class="project-type">Education Analytics &amp; Recommendation</span>
+                    <h3>MHT-CET College Predictor System</h3>
+                    <p>Admission analytics tool aiding engineering aspirants in discovering college options using multi-year cutoff trends, percentile rankings, category quotas, and branch preferences.</p>
                     <div class="tech-stack">
-
                         <span>Python</span>
-                        <span>Data Analytics</span>
-                        <span>Predictive Analytics</span>
-                        <span>Data Visualization</span>
-
+                        <span>Analytics</span>
+                        <span>Data Modeling</span>
+                        <span>Render</span>
                     </div>
-
-                    <!-- PROJECT ACTION BUTTONS -->
                     <div class="project-actions">
-
-                        <!-- GITHUB BUTTON -->
-                        <a
-                            href="https://github.com/yashchaudhari372-lab/MHT-CET-College-Predictor-Admission-Analytics-System"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn github-btn"
-                            aria-label="View MHT-CET College Predictor on GitHub"
-                        >
-
+                        <a href="https://github.com/yashchaudhari372-lab/MHT-CET-College-Predictor-Admission-Analytics-System" target="_blank" rel="noopener noreferrer" class="project-btn github-btn" aria-label="View MHT-CET Predictor on GitHub">
                             <i class="fa-brands fa-github"></i>
                             <span>GitHub</span>
-
                         </a>
-
-                        <!-- LIVE DEMO BUTTON -->
-                        <a
-                            href="https://mht-cet-college-predictor-admission.onrender.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="project-btn demo-btn"
-                            aria-label="Open MHT-CET College Predictor Live Demo"
-                        >
-
+                        <a href="https://mht-cet-college-predictor-admission.onrender.com" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn" aria-label="Open MHT-CET Predictor Live Demo">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             <span>Live Demo</span>
-
                         </a>
-
                     </div>
-
                 </div>
-
             </article>
-
-
         </div>
-
 
         <div class="center-button reveal">
-            
-            <!-- VIEW ALL PROJECTS BUTTON -->
-
-            <a
-                href="https://github.com/yashchaudhari372-lab?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="view-all-btn"
-            >
-                View All Projects
+            <a href="https://github.com/yashchaudhari372-lab?tab=repositories" target="_blank" rel="noopener noreferrer" class="view-all-btn">
+                <span>Explore All Repositories on GitHub</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
-
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- CERTIFICATIONS -->
-
+<!-- CERTIFICATIONS SECTION -->
 <section class="section section-alt" id="certifications">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
-            <span>Learning</span>
-
-            <h2>Certifications</h2>
-
-            <p>
-                Professional certifications and virtual job simulations.
-            </p>
-
+            <span>Accreditations &amp; Learning</span>
+            <h2>Professional Certifications</h2>
+            <p>Industry-recognized credentials, cloud accreditations, and enterprise virtual simulations.</p>
         </div>
 
+        <!-- Filter Tabs for Certifications -->
+        <div class="filter-nav reveal">
+            <button class="filter-btn active" data-cert-filter="all">All Credentials (16)</button>
+            <button class="filter-btn" data-cert-filter="top">⭐ Top Spotlight (5)</button>
+            <button class="filter-btn" data-cert-filter="cloud-ai">Cloud &amp; AI (5)</button>
+            <button class="filter-btn" data-cert-filter="analytics">Data Analytics &amp; BI (4)</button>
+            <button class="filter-btn" data-cert-filter="simulations">Enterprise Simulations (5)</button>
+        </div>
 
         <div class="cert-grid">
-
-
-            
-            <!-- CERTIFICATE 1: ORACLE AI FOUNDATIONS ASSOCIATE -->
-
-            <div class="certificate-card reveal">
-
-                <!-- CERTIFICATE ICON -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-brain"
-                    aria-hidden="true"></i>
+            <!-- CERT 1: ORACLE AI FOUNDATIONS -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Oracle Cloud Infrastructure Certified AI Foundations Associate', 'Oracle University', 'assets/images/certificates/oracle-ai-foundations.jpg', 'Issued: Oct 10, 2026 &bull; Valid thru Oct 10, 2028', '', '103558524OCI26AICFA')">
+                    <img src="assets/images/certificates/oracle-ai-foundations.jpg" alt="Oracle AI Foundations Associate Certificate" loading="lazy">
+                    <span class="cert-badge">Industry Accreditation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
-
-                <!-- CERTIFICATE CONTENT -->
-                <div class="certificate-content">
-
-                    <!-- CERTIFICATE TITLE -->
-                    <h3>
-                        Oracle Cloud Infrastructure Certified
-                        AI Foundations Associate
-                    </h3>
-
-                    <!-- ISSUING ORGANIZATION -->
-                    <p class="certificate-organization">
-                        Oracle University
-                    </p>
-
-                    <!-- ISSUED DATE -->
-                    <span class="certificate-date">
-                        Issued: October 2026
-                    </span>
-
-                    <!-- VIEW CERTIFICATE BUTTON -->
-                    <a
-                        href="assets/images/certificates/oracle-ai-foundations.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn"
-                        aria-label="View Oracle AI Foundations Associate Certificate"
-                    >
-                        <i class="fa-solid fa-award"
-                        aria-hidden="true"></i>
-                        <span>View Certificate</span>
-                    </a>
-
+                <div class="cert-card-body">
+                    <h3>Oracle Cloud Infrastructure Certified AI Foundations Associate</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-shield-halved"></i> Oracle University</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Oct 2026</span>
+                        <span><i class="fa-solid fa-id-badge"></i> ID: 103558524OCI26AICFA</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Oracle Cloud Infrastructure Certified AI Foundations Associate', 'Oracle University', 'assets/images/certificates/oracle-ai-foundations.jpg', 'Issued: Oct 10, 2026 &bull; Valid thru Oct 10, 2028', '', '103558524OCI26AICFA')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
                 </div>
-
             </div>
 
-
-            
-            <!-- CERTIFICATE 2: CISCO DATA SCIENCE -->
-
-            
-            <!-- CISCO DATA SCIENCE ESSENTIALS CERTIFICATE -->
-
-            <div class="certificate-card reveal">
-
-                <!-- Certificate Icon -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-award"></i>
+            <!-- CERT 2: DATABRICKS GENAI -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Databricks Accredited Generative AI Fundamentals', 'Databricks Academy', 'assets/images/certificates/databricks-generative-ai-fundamentals.jpg', 'Issued: November 12, 2026')">
+                    <img src="assets/images/certificates/databricks-generative-ai-fundamentals.jpg" alt="Databricks Generative AI Fundamentals Certificate" loading="lazy">
+                    <span class="cert-badge">Generative AI</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
-
-                <!-- Certificate Details -->
-                <div class="certificate-content">
-
-                    <h3>Data Science Essentials with Python</h3>
-
-                    <p class="certificate-organization">
-                        Cisco Networking Academy
-                    </p>
-
-                    <span class="certificate-date">
-                        Issued: October 2026
-                    </span>
-
-                    <!-- View Certificate Button -->
-                    <a
-                        href="assets/images/certificates/cisco-data-science.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn cisco-python-btn"
-                        aria-label="View Cisco Data Science Essentials with Python Certificate"
-                    >
-                        <i class="fa-solid fa-award"></i>
-                        <span>View Certificate</span>
-                    </a>
-
+                <div class="cert-card-body">
+                    <h3>Databricks Accredited Generative AI Fundamentals</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-cube"></i> Databricks Academy</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-check-circle"></i> Enterprise Accreditation</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Databricks Accredited Generative AI Fundamentals', 'Databricks Academy', 'assets/images/certificates/databricks-generative-ai-fundamentals.jpg', 'Issued: November 12, 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
                 </div>
-
             </div>
 
-            
-            <!-- CERTIFICATE 3: CISCO DATA ANALYTICS ESSENTIALS -->
-
-            <div class="certificate-card reveal">
-
-                <!-- CERTIFICATE ICON -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-chart-line"
-                    aria-hidden="true"></i>
+            <!-- CERT 3: GOOGLE AI ESSENTIALS -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Google AI Essentials (5-Course Specialization)', 'Google &bull; Coursera', 'assets/images/certificates/google-ai-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/VN2NOH37JE7P', 'VN2NOH37JE7P')">
+                    <img src="assets/images/certificates/google-ai-essentials-specialization.jpg" alt="Google AI Essentials Specialization Certificate" loading="lazy">
+                    <span class="cert-badge">Google Specialization</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
-
-                <!-- CERTIFICATE CONTENT -->
-                <div class="certificate-content">
-
-                    <!-- CERTIFICATE TITLE -->
-                    <h3>Data Analytics Essentials</h3>
-
-                    <!-- ORGANIZATION -->
-                    <p class="certificate-organization">
-                        Cisco Networking Academy
-                    </p>
-
-                    <!-- COMPLETION DATE -->
-                    <span class="certificate-date">
-                        Issued: October 2026
-                    </span>
-
-                    <!-- VIEW CERTIFICATE BUTTON -->
-                    <a
-                        href="assets/images/certificates/cisco-data-analytics.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn"
-                        aria-label="View Cisco Data Analytics Essentials Certificate"
-                    >
-                        <i class="fa-solid fa-award"
-                        aria-hidden="true"></i>
-                        <span>View Certificate</span>
-                    </a>
-
+                <div class="cert-card-body">
+                    <h3>Google AI Essentials (5-Course Specialization)</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-google"></i> Google &bull; Coursera</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-list-check"></i> 5 Core Courses</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Google AI Essentials Specialization', 'Google &bull; Coursera', 'assets/images/certificates/google-ai-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/VN2NOH37JE7P', 'VN2NOH37JE7P')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://coursera.org/verify/specialization/VN2NOH37JE7P" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+                        </a>
+                    </div>
                 </div>
-
             </div>
 
-                        
-            <!-- CERTIFICATE 4: TATA GENAI DATA ANALYTICS -->
-
-            <div class="certificate-card reveal">
-
-                <!-- CERTIFICATE ICON -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-brain"
-                    aria-hidden="true"></i>
+            <!-- CERT 4: GOOGLE PROMPTING ESSENTIALS -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Google Prompting Essentials (4-Course Specialization)', 'Google &bull; Coursera', 'assets/images/certificates/google-prompting-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/X8LENXSLTD60', 'X8LENXSLTD60')">
+                    <img src="assets/images/certificates/google-prompting-essentials-specialization.jpg" alt="Google Prompting Essentials Specialization Certificate" loading="lazy">
+                    <span class="cert-badge">Google Specialization</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
+                <div class="cert-card-body">
+                    <h3>Google Prompting Essentials (4-Course Specialization)</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-google"></i> Google &bull; Coursera</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-list-check"></i> 4 Advanced Courses</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Google Prompting Essentials Specialization', 'Google &bull; Coursera', 'assets/images/certificates/google-prompting-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/X8LENXSLTD60', 'X8LENXSLTD60')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://coursera.org/verify/specialization/X8LENXSLTD60" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-                <!-- CERTIFICATE CONTENT -->
-                <div class="certificate-content">
+            <!-- CERT 5: GOOGLE ANALYTICS -->
+            <div class="certificate-card reveal" data-cert-category="top analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Google Analytics Certification (2026)', 'Google', 'assets/images/certificates/google-analytics-certification-2026.jpg', 'Issued: Nov 11, 2026 &bull; Valid thru Nov 11, 2027', '', '200113766')">
+                    <img src="assets/images/certificates/google-analytics-certification-2026.jpg" alt="Google Analytics Certification 2026" loading="lazy">
+                    <span class="cert-badge">Official Certification</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Google Analytics Certification (2026)</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-chart-pie"></i> Google</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-id-badge"></i> ID: 200113766</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Google Analytics Certification (2026)', 'Google', 'assets/images/certificates/google-analytics-certification-2026.jpg', 'Issued: Nov 11, 2026 &bull; Valid thru Nov 11, 2027', '', '200113766')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- CERTIFICATE TITLE -->
+            <!-- CERT 6: IBM DATA PREPARATION -->
+            <div class="certificate-card reveal" data-cert-category="analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Preparation for Analysis', 'IBM SkillsBuild', 'assets/images/certificates/ibm-data-preparation-for-analysis.jpg', 'Issued: Oct 06, 2026', 'https://www.credly.com/badges/66582207-d53b-46bb-8489-1ec6db2dd858')">
+                    <img src="assets/images/certificates/ibm-data-preparation-for-analysis.jpg" alt="IBM Data Preparation for Analysis Certificate" loading="lazy">
+                    <span class="cert-badge">IBM Credly</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Preparation for Analysis</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-database"></i> IBM SkillsBuild</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Oct 2026</span>
+                        <span><i class="fa-solid fa-certificate"></i> Credly Verified</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Preparation for Analysis', 'IBM SkillsBuild', 'assets/images/certificates/ibm-data-preparation-for-analysis.jpg', 'Issued: Oct 06, 2026', 'https://www.credly.com/badges/66582207-d53b-46bb-8489-1ec6db2dd858')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://www.credly.com/badges/66582207-d53b-46bb-8489-1ec6db2dd858" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Credly
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERT 7: IBM GETTING STARTED WITH AI -->
+            <div class="certificate-card reveal" data-cert-category="cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Getting Started with Artificial Intelligence', 'IBM SkillsBuild', 'assets/images/certificates/ibm-getting-started-with-ai.jpg', 'Issued: Nov 16, 2026', 'https://www.credly.com/badges/7d724563-9ea8-4835-89ed-f82fa70c3980')">
+                    <img src="assets/images/certificates/ibm-getting-started-with-ai.jpg" alt="IBM Getting Started with AI Certificate" loading="lazy">
+                    <span class="cert-badge">IBM Credly</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Getting Started with Artificial Intelligence</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-brain"></i> IBM SkillsBuild</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-certificate"></i> Credly Verified</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Getting Started with Artificial Intelligence', 'IBM SkillsBuild', 'assets/images/certificates/ibm-getting-started-with-ai.jpg', 'Issued: Nov 16, 2026', 'https://www.credly.com/badges/7d724563-9ea8-4835-89ed-f82fa70c3980')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://www.credly.com/badges/7d724563-9ea8-4835-89ed-f82fa70c3980" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Credly
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERT 8: MICROSOFT FABRIC -->
+            <div class="certificate-card reveal" data-cert-category="cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Implement a Data Science and ML Solution for AI in Microsoft Fabric', 'Microsoft Learn', 'assets/images/certificates/microsoft-fabric-data-science-ai.jpg', 'Completed: 17 October 2026')">
+                    <img src="assets/images/certificates/microsoft-fabric-data-science-ai.jpg" alt="Microsoft Fabric Data Science Certificate" loading="lazy">
+                    <span class="cert-badge">Microsoft</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Science &amp; ML Solution for AI in Microsoft Fabric</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-microsoft"></i> Microsoft Learn</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Oct 2026</span>
+                        <span><i class="fa-solid fa-trophy"></i> Achievement</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Science & ML Solution in Microsoft Fabric', 'Microsoft Learn', 'assets/images/certificates/microsoft-fabric-data-science-ai.jpg', 'Completed: 17 October 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERT 9: LINKEDIN EXCEL COPILOT -->
+            <div class="certificate-card reveal" data-cert-category="analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Excel with Copilot: AI-Driven Data Analysis', 'LinkedIn Learning', 'assets/images/certificates/linkedin-excel-copilot-ai.jpg', 'Completed: Nov 03, 2026', '', '84c86c61c3e26e17ffc678addf19535cdf39133e244472bebb6e4d29703cc2c7')">
+                    <img src="assets/images/certificates/linkedin-excel-copilot-ai.jpg" alt="LinkedIn Excel with Copilot Certificate" loading="lazy">
+                    <span class="cert-badge">AI Analytics</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Excel with Copilot: AI-Driven Data Analysis</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-linkedin"></i> LinkedIn Learning</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-clock"></i> 1h 55m</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Excel with Copilot: AI-Driven Data Analysis', 'LinkedIn Learning', 'assets/images/certificates/linkedin-excel-copilot-ai.jpg', 'Completed: Nov 03, 2026', '', '84c86c61c3e26e17ffc678addf19535cdf39133e244472bebb6e4d29703cc2c7')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERT 10: BRITISH AIRWAYS DATA SCIENCE -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('British Airways Data Science Job Simulation', 'British Airways &bull; Forage', 'assets/images/certificates/british-airways-data-science.jpg', 'Completed: November 9th, 2026 &bull; Enrolment Code: 6af224b3cd60449dfdb37a60')">
+                    <img src="assets/images/certificates/british-airways-data-science.jpg" alt="British Airways Data Science Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Science Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-plane"></i> British Airways &bull; Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Customer Modeling</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('British Airways Data Science Job Simulation', 'British Airways &bull; Forage', 'assets/images/certificates/british-airways-data-science.jpg', 'Tasks: Lounge eligibility modeling at Heathrow T3 & predicting booking behavior', '', '6af224b3cd60449dfdb37a60')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERT 11: TATA GENAI DATA ANALYTICS -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('GenAI Powered Data Analytics Job Simulation', 'Tata &bull; Forage', 'assets/images/certificates/tata-genai-analytics.jpg', 'Completed: October 4th, 2026 &bull; Verification Code: 6ab960b4f13560b2ad602dec')">
+                    <img src="assets/images/certificates/tata-genai-analytics.jpg" alt="Tata GenAI Data Analytics Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
                     <h3>GenAI Powered Data Analytics Job Simulation</h3>
-
-                    <!-- ORGANIZATION -->
-                    <p class="certificate-organization">
-                        Tata Group &bull; Forage
-                    </p>
-
-                    <!-- COMPLETION DATE -->
-                    <span class="certificate-date">
-                        Issued: October 2026
-                    </span>
-
-                    <!-- VIEW CERTIFICATE BUTTON -->
-                    <a
-                        href="assets/images/certificates/tata-genai-analytics.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn"
-                        aria-label="View Tata GenAI Powered Data Analytics Job Simulation Certificate"
-                    >
-                        <i class="fa-solid fa-award"
-                        aria-hidden="true"></i>
-                        <span>View Certificate</span>
-                    </a>
-
+                    <p class="cert-issuer"><i class="fa-solid fa-building"></i> Tata &bull; Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Delinquency Prediction</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Tata GenAI Data Analytics Job Simulation', 'Tata &bull; Forage', 'assets/images/certificates/tata-genai-analytics.jpg', 'Tasks: EDA & risk profiling, predicting delinquency with AI, collections strategy', '', '6ab960b4f13560b2ad602dec')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
                 </div>
-
             </div>
 
-                        
-            <!-- CERTIFICATE 5: TATA DATA VISUALISATION -->
-
-            <div class="certificate-card reveal">
-
-                <!-- CERTIFICATE ICON -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-chart-pie"
-                    aria-hidden="true"></i>
+            <!-- CERT 12: DELOITTE DATA ANALYTICS -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Analytics Job Simulation', 'Deloitte &bull; Forage', 'assets/images/certificates/deloitte-data-analytics-simulation.jpg', 'Completed: November 7th, 2026 &bull; Verification Code: 6aef11d5cd60449dfd516097')">
+                    <img src="assets/images/certificates/deloitte-data-analytics-simulation.jpg" alt="Deloitte Data Analytics Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
-
-                <!-- CERTIFICATE CONTENT -->
-                <div class="certificate-content">
-
-                    <!-- CERTIFICATE TITLE -->
-                    <h3>
-                        Data Visualisation: Empowering Business
-                        with Effective Insights
-                    </h3>
-
-                    <!-- ORGANIZATION -->
-                    <p class="certificate-organization">
-                        Tata Group &bull; Forage
-                    </p>
-
-                    <!-- COMPLETION DATE -->
-                    <span class="certificate-date">
-                        Issued: September 2026
-                    </span>
-
-                    <!-- VIEW CERTIFICATE BUTTON -->
-                    <a
-                        href="assets/images/certificates/tata-data-visualisation.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn"
-                        aria-label="View Tata Data Visualisation Certificate"
-                    >
-                        <i class="fa-solid fa-award"
-                        aria-hidden="true"></i>
-                        <span>View Certificate</span>
-                    </a>
-
+                <div class="cert-card-body">
+                    <h3>Data Analytics Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-briefcase"></i> Deloitte &bull; Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Forensic Technology</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Deloitte Data Analytics Job Simulation', 'Deloitte &bull; Forage', 'assets/images/certificates/deloitte-data-analytics-simulation.jpg', 'Tasks: Data analysis & forensic technology investigation', '', '6aef11d5cd60449dfd516097')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
                 </div>
-
             </div>
 
-            
-            <!-- CERTIFICATE 6: YBI DATA SCIENCE & ML INTERNSHIP -->
-
-            <div class="certificate-card reveal">
-
-                <!-- CERTIFICATE ICON -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-laptop-code"
-                    aria-hidden="true"></i>
+            <!-- CERT 13: DELOITTE TECHNOLOGY -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Technology Job Simulation', 'Deloitte &bull; Forage', 'assets/images/certificates/deloitte-technology-simulation.jpg', 'Completed: November 7th, 2026 &bull; Verification Code: 6aef1720593f4a36fe63387f')">
+                    <img src="assets/images/certificates/deloitte-technology-simulation.jpg" alt="Deloitte Technology Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
-
-                <!-- CERTIFICATE CONTENT -->
-                <div class="certificate-content">
-
-                    <!-- CERTIFICATE TITLE -->
-                    <h3>
-                        Data Science and Machine Learning Internship
-                    </h3>
-
-                    <!-- ISSUING ORGANIZATION -->
-                    <p class="certificate-organization">
-                        Ybi Foundation
-                    </p>
-
-                    <!-- COMPLETION DATE -->
-                    <span class="certificate-date">
-                        Completed: August 2024
-                    </span>
-
-                    <!-- INTERNSHIP DURATION -->
-                    <span class="certificate-date">
-                        Duration: 1 Month
-                    </span>
-
-                    <!-- VIEW CERTIFICATE BUTTON -->
-                    <a
-                        href="assets/images/certificates/ybi-data-science-ml.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn"
-                        aria-label="View Ybi Foundation Data Science and Machine Learning Internship Certificate"
-                    >
-                        <i class="fa-solid fa-award"
-                        aria-hidden="true"></i>
-                        <span>View Certificate</span>
-                    </a>
-
+                <div class="cert-card-body">
+                    <h3>Technology Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-code"></i> Deloitte &bull; Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Coding &amp; Development</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Deloitte Technology Job Simulation', 'Deloitte &bull; Forage', 'assets/images/certificates/deloitte-technology-simulation.jpg', 'Tasks: Practical coding and system development', '', '6aef1720593f4a36fe63387f')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
                 </div>
-
-            </div>
-            
-            <!-- CERTIFICATE 7: PRODIGY INFOTECH WEB DEVELOPMENT -->
-
-            <div class="certificate-card reveal">
-
-                <!-- CERTIFICATE ICON -->
-                <div class="certificate-icon">
-                    <i class="fa-solid fa-code"
-                    aria-hidden="true"></i>
-                </div>
-
-                <!-- CERTIFICATE CONTENT -->
-                <div class="certificate-content">
-
-                    <!-- CERTIFICATE TITLE -->
-                    <h3>
-                        Web Development Internship
-                    </h3>
-
-                    <!-- ISSUING ORGANIZATION -->
-                    <p class="certificate-organization">
-                        Prodigy InfoTech
-                    </p>
-
-                    <!-- COMPLETION DATE -->
-                    <span class="certificate-date">
-                        Issued: November 2025
-                    </span>
-
-                    <!-- INTERNSHIP DURATION -->
-                    <span class="certificate-date">
-                        Duration: 1 Month
-                    </span>
-
-                    <!-- VIEW CERTIFICATE BUTTON -->
-                    <a
-                        href="assets/images/certificates/prodigy-web-development.jpg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="certificate-view-btn"
-                        aria-label="View Prodigy InfoTech Web Development Internship Certificate"
-                    >
-                        <i class="fa-solid fa-award"
-                        aria-hidden="true"></i>
-                        <span>View Certificate</span>
-                    </a>
-
-                </div>
-
             </div>
 
+            <!-- CERT 14: TATA DATA VISUALISATION -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Visualisation: Empowering Business with Insights', 'Tata &bull; Forage', 'assets/images/certificates/tata-data-visualisation.jpg', 'Completed: September 27th, 2026 &bull; Verification Code: piGuZPQQ2dRYe7B5a')">
+                    <img src="assets/images/certificates/tata-data-visualisation.jpg" alt="Tata Data Visualisation Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Visualisation: Empowering Business with Effective Insights</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-chart-pie"></i> Tata &bull; Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Sep 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Visual Storytelling</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Tata Data Visualisation Job Simulation', 'Tata &bull; Forage', 'assets/images/certificates/tata-data-visualisation.jpg', 'Tasks: Business scenario framing, visual selection, and executive storytelling', '', 'piGuZPQQ2dRYe7B5a')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-            
+            <!-- CERT 15: CISCO DATA SCIENCE -->
+            <div class="certificate-card reveal" data-cert-category="cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Science Essentials with Python', 'Cisco Networking Academy', 'assets/images/certificates/cisco-data-science.jpg', 'Issued: October 2026')">
+                    <img src="assets/images/certificates/cisco-data-science.jpg" alt="Cisco Data Science Certificate" loading="lazy">
+                    <span class="cert-badge">Cisco Academy</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Science Essentials with Python</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Python &amp; Analytics</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Science Essentials with Python', 'Cisco Networking Academy', 'assets/images/certificates/cisco-data-science.jpg', 'Issued: October 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERT 16: CISCO DATA ANALYTICS -->
+            <div class="certificate-card reveal" data-cert-category="analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Analytics Essentials', 'Cisco Networking Academy', 'assets/images/certificates/cisco-data-analytics.jpg', 'Issued: October 2026')">
+                    <img src="assets/images/certificates/cisco-data-analytics.jpg" alt="Cisco Data Analytics Certificate" loading="lazy">
+                    <span class="cert-badge">Cisco Academy</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Analytics Essentials</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-chart-line"></i> Cisco Networking Academy</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Data Transformation</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Analytics Essentials', 'Cisco Networking Academy', 'assets/images/certificates/cisco-data-analytics.jpg', 'Issued: October 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
 </section>
 
-
-<!-- EDUCATION -->
-
+<!-- ACADEMIC EDUCATION SECTION -->
 <section class="section" id="education">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
             <span>Education</span>
-
-            <h2>Academic Background</h2>
-
+            <h2>Academic Foundation</h2>
+            <p>Degree, university background, and core technical coursework.</p>
         </div>
 
-
         <div class="education-card reveal">
-
             <div class="education-icon">
                 <i class="fa-solid fa-graduation-cap"></i>
             </div>
-
-            <div>
-
-                <h3>Bachelor of Technology (B.Tech)</h3>
-
-                <p>
-                    Electronics & Telecommunication Engineering
-                </p>
-
-                <span>
-                    Dr. Babasaheb Ambedkar Technological University, Lonere, Maharashtra, India
+            <div class="education-content">
+                <div class="education-header-row">
+                    <h3>Bachelor of Technology (B.Tech)</h3>
+                    <span class="education-timeline">2023 – 2026</span>
+                </div>
+                <p class="education-degree">Electronics &amp; Telecommunication Engineering</p>
+                <span class="education-institution">
+                    <i class="fa-solid fa-building-columns"></i> Dr. Babasaheb Ambedkar Technological University, Lonere, Maharashtra, India
                 </span>
-
+                <div class="coursework-tags">
+                    <span>Machine Learning</span>
+                    <span>Database Management (SQL)</span>
+                    <span>Probability &amp; Statistics</span>
+                    <span>Python Programming</span>
+                    <span>Data Structures</span>
+                </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-
-<!-- CONTACT -->
-
+<!-- CONTACT SECTION -->
 <section class="section contact-section" id="contact">
-
     <div class="container">
-
         <div class="section-heading reveal">
-
-            <span>Contact</span>
-
-            <h2>Let's Work Together</h2>
-
-            <p>
-                I'm interested in Data Analyst, Data Scientist and Machine
-                Learning opportunities.
-            </p>
-
+            <span>Get In Touch</span>
+            <h2>Let's Build Something Impactful</h2>
+            <p>I am actively exploring Data Scientist, Machine Learning Engineer, and Data Analyst roles.</p>
         </div>
-
 
         <div class="contact-grid">
-
             <div class="contact-content reveal">
-
-                <h3>
-                    Have an opportunity or project in mind?
-                </h3>
-
+                <h3>Looking for an energetic, results-driven data professional?</h3>
                 <p>
-                    Feel free to connect with me through LinkedIn or GitHub.
-                    I'm always interested in discussing data, machine learning
-                    and analytics opportunities.
+                    Whether you have an open full-time position, an internship opportunity, 
+                    or want to discuss an AI/ML project, my inbox is always open. 
+                    I respond promptly!
                 </p>
-
-
-                
-                <!-- PROFESSIONAL CONTACT CARDS -->
 
                 <div class="contact-links">
-
-                    <!-- EMAIL -->
-                    <a href="mailto:yashchaudhari372@gmail.com"
-                    class="contact-link">
-
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-
+                    <a href="mailto:yashchaudhari372@gmail.com" class="contact-link">
+                        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div class="contact-details">
-                            <span>Email</span>
+                            <span>Direct Email</span>
                             <strong>yashchaudhari372@gmail.com</strong>
                         </div>
-
                         <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
-
                     </a>
 
-                    <!-- PHONE -->
-                    <a href="tel:+919022814603"
-                    class="contact-link">
-
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-
+                    <a href="tel:+919022814603" class="contact-link">
+                        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                         <div class="contact-details">
-                            <span>Phone</span>
+                            <span>Phone / WhatsApp</span>
                             <strong>+91 9022814603</strong>
                         </div>
-
                         <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
-
                     </a>
 
-                    <!-- LINKEDIN -->
-                    <a href="https://www.linkedin.com/in/yashchaudhari08"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-link">
-
-                        <div class="contact-icon">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </div>
-
+                    <a href="https://www.linkedin.com/in/yashchaudhari08" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
                         <div class="contact-details">
-                            <span>LinkedIn</span>
-                            <strong>Connect with me</strong>
+                            <span>LinkedIn Profile</span>
+                            <strong>linkedin.com/in/yashchaudhari08</strong>
                         </div>
-
                         <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
-
                     </a>
 
-                    
-                    <!-- GITHUB PROFILE -->
-
-                    <a href="https://github.com/yashchaudhari372-lab"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-link">
-
-                        <div class="contact-icon">
-                            <i class="fa-brands fa-github"></i>
-                        </div>
-
+                    <a href="https://github.com/yashchaudhari372-lab" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
                         <div class="contact-details">
-                            <span>GitHub</span>
-                            <strong>View my GitHub Profile</strong>
+                            <span>GitHub Code Repos</span>
+                            <strong>github.com/yashchaudhari372-lab</strong>
                         </div>
-
                         <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
-
                     </a>
-
                 </div>
-
             </div>
 
-
-            
-            <form            
-                id="contactForm"
-                name="contact"
-                method="POST"
-                action="/pages/thank-you.html"
-                data-netlify="true"
-                netlify-honeypot="bot-field">
-
+            <form id="contactForm" name="contact" method="POST" action="/pages/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="reveal">
                 <input type="hidden" name="form-name" value="contact">
-
-                <p hidden>
-                    <label>
-                        Leave this field empty:
-                        <input name="bot-field">
-                    </label>
-                </p>
-
+                <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
 
                 <div class="form-group">
-
-                    <label for="name">Name</label>
-
-                    <input type="text"
-                           id="name"
-                           name="name"
-                           placeholder="Your name"
-                           required>
-
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Alex Smith" required>
                 </div>
-
 
                 <div class="form-group">
-
-                    <label for="email">Email</label>
-
-                    <input type="email"
-                           id="email"
-                           name="email"
-                           placeholder="your@email.com"
-                           required>
-
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="alex@company.com" required>
                 </div>
-
 
                 <div class="form-group">
-
-                    <label for="message">Message</label>
-
-                    <textarea id="message"
-                              name="message"
-                              rows="5"
-                              placeholder="Write your message..."
-                              required></textarea>
-
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Hi Yash, I reviewed your portfolio and would like to discuss..." required></textarea>
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">
-                    Send Message
+                    <span>Send Message</span>
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
-
             </form>
-
         </div>
-
     </div>
-
 </section>
 
 </main>
 
-
+<!-- FOOTER -->
 <footer class="footer">
-
     <div class="container footer-content">
-
         <div>
-
-            <a href="#home" class="logo">
-                Yash<span>.</span>
-            </a>
-
-            <p>
-                Data Scientist • Data Analyst • ML Enthusiast
-            </p>
-
+            <a href="#home" class="logo">Yash<span>.</span></a>
+            <p>Data Scientist &bull; Machine Learning Engineer &bull; Generative AI Specialist</p>
         </div>
-
-
         <div class="footer-social">
-
-            <a href="https://github.com/yashchaudhari372-lab"
-               target="_blank"
-               aria-label="GitHub">
-
-                <i class="fa-brands fa-github"></i>
-
-            </a>
-
-            <a href="https://www.linkedin.com/in/yashchaudhari08"
-               target="_blank"
-               aria-label="LinkedIn">
-
-                <i class="fa-brands fa-linkedin"></i>
-
-            </a>
-
+            <a href="https://github.com/yashchaudhari372-lab" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/yashchaudhari08" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:yashchaudhari372@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-
     </div>
-
-
     <div class="footer-bottom">
-
-        <p>
-            © <span id="currentYear"></span> Yash Chaudhari. All Rights Reserved.
-        </p>
-
+        <p>&copy; <span id="currentYear"></span> Yash Chaudhari. All Rights Reserved. Engineered with precision.</p>
     </div>
-
 </footer>
 
+<!-- SCROLL TO TOP BUTTON -->
+<button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-<button id="scrollTop"
-        class="scroll-top"
-        aria-label="Back to top">
+<!-- CERTIFICATE LIGHTBOX MODAL -->
+<div class="modal-backdrop" id="certModal" aria-hidden="true" role="dialog">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div>
+                <h3 class="modal-title" id="modalTitle">Certificate</h3>
+                <p class="modal-subtitle" id="modalIssuer">Issuer</p>
+            </div>
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close certificate viewer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+            <img id="modalImg" src="" alt="Certificate preview">
+        </div>
+        <div class="modal-footer">
+            <div class="modal-meta" id="modalMeta">Issued Date / Details</div>
+            <div class="modal-actions">
+                <a id="modalVerifyLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display:none;">
+                    <i class="fa-solid fa-shield-check"></i>
+                    <span>Verify Online</span>
+                </a>
+                <button class="btn btn-outline btn-sm" id="modalDownloadBtn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Open High-Res</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
+<!-- TOAST NOTIFICATION -->
+<div class="copy-toast" id="copyToast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">Email copied to clipboard!</span>
+</div>
 
 <script src="js/animations.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>

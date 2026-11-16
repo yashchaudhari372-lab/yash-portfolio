@@ -1,324 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-color="blue">
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Yash Chaudhari</title>
+    <meta name="description" content="Portfolio projects in Machine Learning, Deep Learning, Generative AI, and Data Analytics by Yash Chaudhari.">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <!-- Prevent Theme Flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+            const savedColor = localStorage.getItem('portfolio-accent-color') || 'blue';
+            document.documentElement.setAttribute('data-color', savedColor);
+        })();
+    </script>
 
-    <title>Projects | Yash Chaudhari</title>
-
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/responsive.css">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
 <header class="header">
-
     <div class="container navbar">
-
-        <a href="../index.html"
-           class="logo">
+        <a href="../index.html" class="logo">
             Yash<span>.</span>
         </a>
 
-        <a href="../index.html"
-           class="btn btn-outline">
+        <div class="nav-actions">
+            <!-- Palette Selector -->
+            <div class="palette-wrapper">
+                <button id="paletteToggle" class="palette-btn" aria-label="Change accent theme color" title="Theme Accent Colors">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+                <div class="palette-dropdown" id="paletteDropdown">
+                    <span class="palette-title">Accent Palette</span>
+                    <div class="palette-grid">
+                        <button class="palette-color-btn active" data-color="blue" style="background: #2563eb;" title="Electric Blue"></button>
+                        <button class="palette-color-btn" data-color="emerald" style="background: #059669;" title="Cyber Emerald"></button>
+                        <button class="palette-color-btn" data-color="purple" style="background: #7c3aed;" title="Royal Violet"></button>
+                        <button class="palette-color-btn" data-color="amber" style="background: #ea580c;" title="Sunset Amber"></button>
+                        <button class="palette-color-btn" data-color="rose" style="background: #e11d48;" title="Ruby Rose"></button>
+                        <button class="palette-color-btn" data-color="cyan" style="background: #0284c7;" title="Neon Cyan"></button>
+                    </div>
+                </div>
+            </div>
 
-            <i class="fa-solid fa-arrow-left"></i>
+            <!-- Theme Toggle -->
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
 
-            Home
-
-        </a>
-
+            <a href="../index.html" class="btn btn-outline" style="padding: 9px 18px; font-size: 0.9rem;">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
     </div>
-
 </header>
 
-
 <main>
-
-<section class="section"
-         style="padding-top:140px">
-
+<section class="section" style="padding-top: 130px;">
     <div class="container">
-
-        <div class="section-heading">
-
+        <div class="section-heading reveal">
             <span>Portfolio</span>
-
-            <h1>My Projects</h1>
-
-            <p>
-                Data Science, Machine Learning,
-                NLP, Deep Learning and Data Analytics projects.
-            </p>
-
+            <h1>All Technical Projects</h1>
+            <p>Production web apps, machine learning engines, and data analytics systems.</p>
         </div>
 
+        <!-- Project Filter Buttons -->
+        <div class="filter-nav reveal">
+            <button class="filter-btn active" data-project-filter="all">All Projects</button>
+            <button class="filter-btn" data-project-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-project-filter="dl">Deep Learning &amp; NLP</button>
+            <button class="filter-btn" data-project-filter="analytics">Analytics &amp; Prediction</button>
+        </div>
 
         <div class="projects-grid">
-
-
-            <article class="project-card">
-
+            <!-- PROJECT 1: SENTIMENT ANALYSIS -->
+            <article class="project-card reveal" data-project-category="dl">
                 <div class="project-image">
-
-                    <img src="../assets/images/projects/house-price-prediction.png"
-                         alt="House Price Prediction">
-
+                    <img src="../assets/images/projects/sentiment-analysis.png" alt="Sentiment Analysis Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Real-time NLP</span>
                 </div>
-
                 <div class="project-content">
-
-                    <span class="project-type">
-                        Machine Learning
-                    </span>
-
-                    <h3>House Price Prediction</h3>
-
-                    <p>
-                        Machine learning application for estimating
-                        property prices from real-estate characteristics.
-                    </p>
-
+                    <span class="project-type">Natural Language Processing</span>
+                    <h3>Sentiment Analysis</h3>
+                    <p>NLP application that processes raw textual reviews or statements and predicts sentiment polarity using a trained text classification model with high precision.</p>
                     <div class="tech-stack">
-
-                        <span>Python</span>
-                        <span>Scikit-learn</span>
-                        <span>Flask</span>
-
-                    </div>
-
-                    <div class="project-links">
-
-                        <a href="https://github.com/yashchaudhari372-lab/House-Price-Prediction"
-                           target="_blank">
-
-                            <i class="fa-brands fa-github"></i>
-                            GitHub
-
-                        </a>
-
-                        <a href="https://house-price-prediction-4-0adn.onrender.com/"
-                           target="_blank">
-
-                            Live Demo
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <div class="project-image">
-
-                    <img src="../assets/images/projects/loan-approval.png"
-                         alt="Loan Approval Prediction">
-
-                </div>
-
-                <div class="project-content">
-
-                    <span class="project-type">
-                        Machine Learning
-                    </span>
-
-                    <h3>
-                        Loan Approval Prediction System
-                    </h3>
-
-                    <p>
-                        XGBoost-based classification system for
-                        predicting loan approval decisions.
-                    </p>
-
-                    <div class="tech-stack">
-
-                        <span>Python</span>
-                        <span>XGBoost</span>
-                        <span>Flask</span>
-
-                    </div>
-
-                    <div class="project-links">
-
-                        <a href="https://github.com/yashchaudhari372-lab/Loan_Approval_Prediction_xgboost_classifier"
-                           target="_blank">
-
-                            <i class="fa-brands fa-github"></i>
-                            GitHub
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="project-card">
-
-                <div class="project-image">
-
-                    <img src="../assets/images/projects/sentiment-analysis.png"
-                         alt="Sentiment Analysis">
-
-                </div>
-
-                <div class="project-content">
-
-                    <span class="project-type">
-                        Natural Language Processing
-                    </span>
-
-                    <h3>
-                        Sentiment Analysis
-                    </h3>
-
-                    <p>
-                        NLP application designed to classify textual
-                        sentiment using machine-learning techniques.
-                    </p>
-
-                    <div class="tech-stack">
-
                         <span>Python</span>
                         <span>NLP</span>
                         <span>Scikit-learn</span>
                         <span>Flask</span>
-
+                        <span>Vercel</span>
                     </div>
-
-                    <div class="project-links">
-
-                        <a href="https://github.com/yashchaudhari372-lab/Sentiment_Analysis"
-                           target="_blank">
-
+                    <div class="project-actions">
+                        <a href="https://github.com/yashchaudhari372-lab/Sentiment_Analysis" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
                             <i class="fa-brands fa-github"></i>
-                            GitHub
-
+                            <span>GitHub</span>
                         </a>
-
+                        <a href="https://sentiment-analysis-livid-nine.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Live Demo</span>
+                        </a>
                     </div>
-
                 </div>
-
             </article>
 
-
-            <article class="project-card">
-
+            <!-- PROJECT 2: LOAN APPROVAL PREDICTION -->
+            <article class="project-card reveal" data-project-category="ml">
                 <div class="project-image">
-
-                    <img src="../assets/images/projects/churn-prediction.png"
-                         alt="Customer Churn Prediction">
-
+                    <img src="../assets/images/projects/loan-approval.png" alt="Loan Approval Prediction Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">XGBoost Classifier</span>
                 </div>
-
                 <div class="project-content">
-
-                    <span class="project-type">
-                        Deep Learning
-                    </span>
-
-                    <h3>
-                        Customer Churn Prediction Using ANN
-                    </h3>
-
-                    <p>
-                        Artificial Neural Network developed to identify
-                        customers who are likely to churn.
-                    </p>
-
+                    <span class="project-type">Machine Learning &bull; Classification</span>
+                    <h3>Loan Approval Prediction System</h3>
+                    <p>Financial risk classification system predicting creditworthiness and loan approval decisions based on applicant demographics, credit history, and asset evaluations.</p>
                     <div class="tech-stack">
+                        <span>Python</span>
+                        <span>XGBoost</span>
+                        <span>Scikit-learn</span>
+                        <span>Flask</span>
+                        <span>Render</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/yashchaudhari372-lab/Loan_Approval_Prediction_System" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://loan-approval-prediction-xgboost-66ol.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
 
+            <!-- PROJECT 3: SPAM DETECTION USING RNN -->
+            <article class="project-card reveal" data-project-category="dl">
+                <div class="project-image">
+                    <img src="../assets/images/projects/spam-detection.png" alt="Spam Detection using RNN Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Recurrent Neural Net</span>
+                </div>
+                <div class="project-content">
+                    <span class="project-type">Deep Learning &bull; NLP</span>
+                    <h3>Spam Detection using RNN</h3>
+                    <p>Deep learning sequential text classifier utilizing a Recurrent Neural Network (RNN) to analyze token sequences and classify messages with high sensitivity against spam patterns.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>RNN</span>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/yashchaudhari372-lab/Spam-Detection-using-RNN" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://spam-not-spam-detection-by-rnn-g96x9yxtjkuhxtdabkgvyc.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 4: CUSTOMER CHURN ANALYSIS USING ANN -->
+            <article class="project-card reveal" data-project-category="dl">
+                <div class="project-image">
+                    <img src="../assets/images/projects/customer-churn-ann.png" alt="Customer Churn Analysis Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Neural Network (ANN)</span>
+                </div>
+                <div class="project-content">
+                    <span class="project-type">Deep Learning &bull; Retention Analytics</span>
+                    <h3>Customer Churn Analysis using ANN</h3>
+                    <p>End-to-end churn prediction platform engineered with an Artificial Neural Network (ANN) that detects behavioral indicators of customer attrition to support targeted retention.</p>
+                    <div class="tech-stack">
                         <span>Python</span>
                         <span>ANN</span>
                         <span>TensorFlow</span>
                         <span>Keras</span>
-
+                        <span>Vercel</span>
                     </div>
-
+                    <div class="project-actions">
+                        <a href="https://github.com/yashchaudhari372-lab/Customer_Churn_Analysis_using_ANN" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://customer-churn-analysis-using-ann-1.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
                 </div>
-
             </article>
 
-
-            <article class="project-card">
-
+            <!-- PROJECT 5: VEHICLE PRICE PREDICTION SYSTEM -->
+            <article class="project-card reveal" data-project-category="ml">
                 <div class="project-image">
-
-                    <img src="../assets/images/projects/powerbi-dashboard.png"
-                         alt="Power BI Retail Dashboard">
-
+                    <img src="../assets/images/projects/vehicle-price.png" alt="Vehicle Price Prediction Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">95.67% R² Score</span>
                 </div>
-
                 <div class="project-content">
-
-                    <span class="project-type">
-                        Data Analytics
-                    </span>
-
-                    <h3>
-                        Retail Data Analysis Dashboard
-                    </h3>
-
-                    <p>
-                        Interactive Power BI dashboard for analysing
-                        retail sales, customers and business trends.
-                    </p>
-
+                    <span class="project-type">Machine Learning &bull; Regression</span>
+                    <h3>Vehicle Price Prediction System</h3>
+                    <p>High-precision vehicle price valuation engine using Random Forest Regression, scoring a 95.67% R² on holdout validation by factoring mileage, engine capacity, age, and brand equity.</p>
                     <div class="tech-stack">
-
-                        <span>Power BI</span>
-                        <span>Power Query</span>
-                        <span>Data Cleaning</span>
-                        <span>Visualization</span>
-
+                        <span>Python</span>
+                        <span>Random Forest</span>
+                        <span>Scikit-learn</span>
+                        <span>Regression</span>
+                        <span>Vercel</span>
                     </div>
-
+                    <div class="project-actions">
+                        <a href="https://github.com/yashchaudhari372-lab/Vehicle_Price_Prediction_System" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://vehicle-price-prediction-random-for.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
                 </div>
-
             </article>
 
+            <!-- PROJECT 6: MHT-CET COLLEGE PREDICTOR -->
+            <article class="project-card reveal" data-project-category="analytics">
+                <div class="project-image">
+                    <img src="../assets/images/projects/mht-cet-college-predictor.png" alt="MHT-CET College Predictor Screenshot" loading="lazy">
+                    <span class="project-highlight-badge">Admission Analytics</span>
+                </div>
+                <div class="project-content">
+                    <span class="project-type">Education Analytics &amp; Recommendation</span>
+                    <h3>MHT-CET College Predictor System</h3>
+                    <p>Admission analytics tool aiding engineering aspirants in discovering college options using multi-year cutoff trends, percentile rankings, category quotas, and branch preferences.</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>Analytics</span>
+                        <span>Data Modeling</span>
+                        <span>Render</span>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/yashchaudhari372-lab/MHT-CET-College-Predictor-Admission-Analytics-System" target="_blank" rel="noopener noreferrer" class="project-btn github-btn">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://mht-cet-college-predictor-admission.onrender.com" target="_blank" rel="noopener noreferrer" class="project-btn demo-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
         </div>
-
     </div>
-
 </section>
-
 </main>
 
-
 <footer class="footer">
-
     <div class="footer-bottom">
-
-        <p>
-            © 2026 Yash Chaudhari.
-            All Rights Reserved.
-        </p>
-
+        <p>&copy; <span id="currentYear"></span> Yash Chaudhari. All Rights Reserved.</p>
     </div>
-
 </footer>
 
+<button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="copy-toast" id="copyToast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">Notification</span>
+</div>
+
+<script src="../js/animations.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

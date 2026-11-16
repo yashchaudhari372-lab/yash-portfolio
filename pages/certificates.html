@@ -1,133 +1,500 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="en" data-color="blue">
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Certifications | Yash Chaudhari</title>
+    <meta name="description" content="Verified professional certifications, cloud accreditations, and virtual job simulations earned by Yash Chaudhari.">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <!-- Prevent Theme Flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+            const savedColor = localStorage.getItem('portfolio-accent-color') || 'blue';
+            document.documentElement.setAttribute('data-color', savedColor);
+        })();
+    </script>
 
-    <title>
-        Certifications | Yash Chaudhari
-    </title>
-
-    <link rel="stylesheet"
-          href="../css/style.css">
-
-    <link rel="stylesheet"
-          href="../css/responsive.css">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
 <header class="header">
-
     <div class="container navbar">
-
-        <a href="../index.html"
-           class="logo">
-
+        <a href="../index.html" class="logo">
             Yash<span>.</span>
-
         </a>
 
-        <a href="../index.html"
-           class="btn btn-outline">
+        <div class="nav-actions">
+            <!-- Palette Selector -->
+            <div class="palette-wrapper">
+                <button id="paletteToggle" class="palette-btn" aria-label="Change accent theme color" title="Theme Accent Colors">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+                <div class="palette-dropdown" id="paletteDropdown">
+                    <span class="palette-title">Accent Palette</span>
+                    <div class="palette-grid">
+                        <button class="palette-color-btn active" data-color="blue" style="background: #2563eb;" title="Electric Blue"></button>
+                        <button class="palette-color-btn" data-color="emerald" style="background: #059669;" title="Cyber Emerald"></button>
+                        <button class="palette-color-btn" data-color="purple" style="background: #7c3aed;" title="Royal Violet"></button>
+                        <button class="palette-color-btn" data-color="amber" style="background: #ea580c;" title="Sunset Amber"></button>
+                        <button class="palette-color-btn" data-color="rose" style="background: #e11d48;" title="Ruby Rose"></button>
+                        <button class="palette-color-btn" data-color="cyan" style="background: #0284c7;" title="Neon Cyan"></button>
+                    </div>
+                </div>
+            </div>
 
-            <i class="fa-solid fa-arrow-left"></i>
+            <!-- Theme Toggle -->
+            <button id="themeToggle" class="theme-btn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
 
-            Home
-
-        </a>
-
+            <a href="../index.html" class="btn btn-outline" style="padding: 9px 18px; font-size: 0.9rem;">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
     </div>
-
 </header>
 
-
 <main>
-
-<section class="section"
-         style="padding-top:140px">
-
+<section class="section" style="padding-top: 130px;">
     <div class="container">
-
-        <div class="section-heading">
-
-            <span>
-                Professional Development
-            </span>
-
-            <h1>
-                Certifications
-            </h1>
-
-            <p>
-                Certifications and virtual job simulations
-                completed as part of my professional learning.
-            </p>
-
+        <div class="section-heading reveal">
+            <span>Verified Credentials</span>
+            <h1>All Professional Certifications</h1>
+            <p>Complete directory of industry accreditations, cloud certifications, and enterprise simulations.</p>
         </div>
 
+        <!-- Filter Tabs for Certifications -->
+        <div class="filter-nav reveal">
+            <button class="filter-btn active" data-cert-filter="all">All Credentials (16)</button>
+            <button class="filter-btn" data-cert-filter="top">⭐ Top Spotlight (5)</button>
+            <button class="filter-btn" data-cert-filter="cloud-ai">Cloud &amp; AI (5)</button>
+            <button class="filter-btn" data-cert-filter="analytics">Data Analytics &amp; BI (4)</button>
+            <button class="filter-btn" data-cert-filter="simulations">Enterprise Simulations (5)</button>
+        </div>
 
         <div class="cert-grid">
-
-            <article class="certificate-card">
-
-                <div class="certificate-icon">
-
-                    <i class="fa-solid fa-certificate"></i>
-
+            <!-- 1. Oracle AI Foundations -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Oracle Cloud Infrastructure Certified AI Foundations Associate', 'Oracle University', '../assets/images/certificates/oracle-ai-foundations.jpg', 'Issued: Oct 10, 2026 • Valid thru Oct 10, 2028', '', '103558524OCI26AICFA')">
+                    <img src="../assets/images/certificates/oracle-ai-foundations.jpg" alt="Oracle AI Foundations Associate Certificate" loading="lazy">
+                    <span class="cert-badge">Industry Accreditation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                 </div>
-
-                <div>
-
-                    <h3>
-                        Data Visualization Job Simulation
-                    </h3>
-
-                    <p>
-                        Tata Group • Forage
-                    </p>
-
-                    <p>
-                        Worked on business data visualization,
-                        dashboard development and communicating
-                        insights from data.
-                    </p>
-
+                <div class="cert-card-body">
+                    <h3>Oracle Cloud Infrastructure Certified AI Foundations Associate</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-shield-halved"></i> Oracle University</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Oct 2026</span>
+                        <span><i class="fa-solid fa-id-badge"></i> ID: 103558524OCI26AICFA</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Oracle Cloud Infrastructure Certified AI Foundations Associate', 'Oracle University', '../assets/images/certificates/oracle-ai-foundations.jpg', 'Issued: Oct 10, 2026 • Valid thru Oct 10, 2028', '', '103558524OCI26AICFA')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
                 </div>
+            </div>
 
-            </article>
+            <!-- 2. Databricks Generative AI -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Databricks Accredited Generative AI Fundamentals', 'Databricks Academy', '../assets/images/certificates/databricks-generative-ai-fundamentals.jpg', 'Issued: November 12, 2026')">
+                    <img src="../assets/images/certificates/databricks-generative-ai-fundamentals.jpg" alt="Databricks Generative AI Fundamentals Certificate" loading="lazy">
+                    <span class="cert-badge">Generative AI</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Databricks Accredited Generative AI Fundamentals</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-cube"></i> Databricks Academy</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-check-circle"></i> Enterprise Accreditation</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Databricks Accredited Generative AI Fundamentals', 'Databricks Academy', '../assets/images/certificates/databricks-generative-ai-fundamentals.jpg', 'Issued: November 12, 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
 
+            <!-- 3. Google AI Essentials -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Google AI Essentials Specialization', 'Google • Coursera', '../assets/images/certificates/google-ai-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/VN2NOH37JE7P', 'VN2NOH37JE7P')">
+                    <img src="../assets/images/certificates/google-ai-essentials-specialization.jpg" alt="Google AI Essentials Specialization Certificate" loading="lazy">
+                    <span class="cert-badge">Google Specialization</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Google AI Essentials (5-Course Specialization)</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-google"></i> Google • Coursera</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-list-check"></i> 5 Core Courses</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Google AI Essentials Specialization', 'Google • Coursera', '../assets/images/certificates/google-ai-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/VN2NOH37JE7P', 'VN2NOH37JE7P')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://coursera.org/verify/specialization/VN2NOH37JE7P" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Google Prompting Essentials -->
+            <div class="certificate-card reveal" data-cert-category="top cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Google Prompting Essentials Specialization', 'Google • Coursera', '../assets/images/certificates/google-prompting-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/X8LENXSLTD60', 'X8LENXSLTD60')">
+                    <img src="../assets/images/certificates/google-prompting-essentials-specialization.jpg" alt="Google Prompting Essentials Specialization Certificate" loading="lazy">
+                    <span class="cert-badge">Google Specialization</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Google Prompting Essentials (4-Course Specialization)</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-google"></i> Google • Coursera</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-list-check"></i> 4 Advanced Courses</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Google Prompting Essentials Specialization', 'Google • Coursera', '../assets/images/certificates/google-prompting-essentials-specialization.jpg', 'Issued: Nov 14, 2026', 'https://coursera.org/verify/specialization/X8LENXSLTD60', 'X8LENXSLTD60')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://coursera.org/verify/specialization/X8LENXSLTD60" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Google Analytics -->
+            <div class="certificate-card reveal" data-cert-category="top analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Google Analytics Certification (2026)', 'Google', '../assets/images/certificates/google-analytics-certification-2026.jpg', 'Issued: Nov 11, 2026 • Valid thru Nov 11, 2027', '', '200113766')">
+                    <img src="../assets/images/certificates/google-analytics-certification-2026.jpg" alt="Google Analytics Certification 2026" loading="lazy">
+                    <span class="cert-badge">Official Certification</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Google Analytics Certification (2026)</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-chart-pie"></i> Google</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-id-badge"></i> ID: 200113766</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Google Analytics Certification (2026)', 'Google', '../assets/images/certificates/google-analytics-certification-2026.jpg', 'Issued: Nov 11, 2026 • Valid thru Nov 11, 2027', '', '200113766')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. IBM Data Preparation -->
+            <div class="certificate-card reveal" data-cert-category="analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Preparation for Analysis', 'IBM SkillsBuild', '../assets/images/certificates/ibm-data-preparation-for-analysis.jpg', 'Issued: Oct 06, 2026', 'https://www.credly.com/badges/66582207-d53b-46bb-8489-1ec6db2dd858')">
+                    <img src="../assets/images/certificates/ibm-data-preparation-for-analysis.jpg" alt="IBM Data Preparation for Analysis Certificate" loading="lazy">
+                    <span class="cert-badge">IBM Credly</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Preparation for Analysis</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-database"></i> IBM SkillsBuild</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Oct 2026</span>
+                        <span><i class="fa-solid fa-certificate"></i> Credly Verified</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Preparation for Analysis', 'IBM SkillsBuild', '../assets/images/certificates/ibm-data-preparation-for-analysis.jpg', 'Issued: Oct 06, 2026', 'https://www.credly.com/badges/66582207-d53b-46bb-8489-1ec6db2dd858')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://www.credly.com/badges/66582207-d53b-46bb-8489-1ec6db2dd858" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Credly
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. IBM Getting Started with AI -->
+            <div class="certificate-card reveal" data-cert-category="cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Getting Started with Artificial Intelligence', 'IBM SkillsBuild', '../assets/images/certificates/ibm-getting-started-with-ai.jpg', 'Issued: Nov 16, 2026', 'https://www.credly.com/badges/7d724563-9ea8-4835-89ed-f82fa70c3980')">
+                    <img src="../assets/images/certificates/ibm-getting-started-with-ai.jpg" alt="IBM Getting Started with AI Certificate" loading="lazy">
+                    <span class="cert-badge">IBM Credly</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Getting Started with Artificial Intelligence</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-brain"></i> IBM SkillsBuild</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-certificate"></i> Credly Verified</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Getting Started with Artificial Intelligence', 'IBM SkillsBuild', '../assets/images/certificates/ibm-getting-started-with-ai.jpg', 'Issued: Nov 16, 2026', 'https://www.credly.com/badges/7d724563-9ea8-4835-89ed-f82fa70c3980')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                        <a href="https://www.credly.com/badges/7d724563-9ea8-4835-89ed-f82fa70c3980" target="_blank" rel="noopener noreferrer" class="btn-cert-verify">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Credly
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Microsoft Fabric -->
+            <div class="certificate-card reveal" data-cert-category="cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Science & ML Solution in Microsoft Fabric', 'Microsoft Learn', '../assets/images/certificates/microsoft-fabric-data-science-ai.jpg', 'Completed: 17 October 2026')">
+                    <img src="../assets/images/certificates/microsoft-fabric-data-science-ai.jpg" alt="Microsoft Fabric Data Science Certificate" loading="lazy">
+                    <span class="cert-badge">Microsoft</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Science &amp; ML Solution for AI in Microsoft Fabric</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-microsoft"></i> Microsoft Learn</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Oct 2026</span>
+                        <span><i class="fa-solid fa-trophy"></i> Achievement</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Science & ML Solution in Microsoft Fabric', 'Microsoft Learn', '../assets/images/certificates/microsoft-fabric-data-science-ai.jpg', 'Completed: 17 October 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. LinkedIn Excel Copilot -->
+            <div class="certificate-card reveal" data-cert-category="analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Excel with Copilot: AI-Driven Data Analysis', 'LinkedIn Learning', '../assets/images/certificates/linkedin-excel-copilot-ai.jpg', 'Completed: Nov 03, 2026', '', '84c86c61c3e26e17ffc678addf19535cdf39133e244472bebb6e4d29703cc2c7')">
+                    <img src="../assets/images/certificates/linkedin-excel-copilot-ai.jpg" alt="LinkedIn Excel with Copilot Certificate" loading="lazy">
+                    <span class="cert-badge">AI Analytics</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Excel with Copilot: AI-Driven Data Analysis</h3>
+                    <p class="cert-issuer"><i class="fa-brands fa-linkedin"></i> LinkedIn Learning</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Issued: Nov 2026</span>
+                        <span><i class="fa-solid fa-clock"></i> 1h 55m</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Excel with Copilot: AI-Driven Data Analysis', 'LinkedIn Learning', '../assets/images/certificates/linkedin-excel-copilot-ai.jpg', 'Completed: Nov 03, 2026', '', '84c86c61c3e26e17ffc678addf19535cdf39133e244472bebb6e4d29703cc2c7')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. British Airways -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('British Airways Data Science Job Simulation', 'British Airways • Forage', '../assets/images/certificates/british-airways-data-science.jpg', 'Completed: November 9th, 2026 • Code: 6af224b3cd60449dfdb37a60')">
+                    <img src="../assets/images/certificates/british-airways-data-science.jpg" alt="British Airways Data Science Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Science Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-plane"></i> British Airways • Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Customer Modeling</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('British Airways Data Science Job Simulation', 'British Airways • Forage', '../assets/images/certificates/british-airways-data-science.jpg', 'Tasks: Lounge eligibility modeling at Heathrow T3 & predicting booking behavior', '', '6af224b3cd60449dfdb37a60')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Tata GenAI Analytics -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Tata GenAI Data Analytics Job Simulation', 'Tata • Forage', '../assets/images/certificates/tata-genai-analytics.jpg', 'Completed: October 4th, 2026 • Code: 6ab960b4f13560b2ad602dec')">
+                    <img src="../assets/images/certificates/tata-genai-analytics.jpg" alt="Tata GenAI Data Analytics Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>GenAI Powered Data Analytics Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-building"></i> Tata • Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Delinquency Prediction</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Tata GenAI Data Analytics Job Simulation', 'Tata • Forage', '../assets/images/certificates/tata-genai-analytics.jpg', 'Tasks: EDA & risk profiling, predicting delinquency with AI, collections strategy', '', '6ab960b4f13560b2ad602dec')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Deloitte Data Analytics -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Deloitte Data Analytics Job Simulation', 'Deloitte • Forage', '../assets/images/certificates/deloitte-data-analytics-simulation.jpg', 'Completed: November 7th, 2026 • Code: 6aef11d5cd60449dfd516097')">
+                    <img src="../assets/images/certificates/deloitte-data-analytics-simulation.jpg" alt="Deloitte Data Analytics Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Analytics Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-briefcase"></i> Deloitte • Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Forensic Technology</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Deloitte Data Analytics Job Simulation', 'Deloitte • Forage', '../assets/images/certificates/deloitte-data-analytics-simulation.jpg', 'Tasks: Data analysis & forensic technology investigation', '', '6aef11d5cd60449dfd516097')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Deloitte Technology -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Deloitte Technology Job Simulation', 'Deloitte • Forage', '../assets/images/certificates/deloitte-technology-simulation.jpg', 'Completed: November 7th, 2026 • Code: 6aef1720593f4a36fe63387f')">
+                    <img src="../assets/images/certificates/deloitte-technology-simulation.jpg" alt="Deloitte Technology Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Technology Job Simulation</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-code"></i> Deloitte • Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Nov 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Coding & Development</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Deloitte Technology Job Simulation', 'Deloitte • Forage', '../assets/images/certificates/deloitte-technology-simulation.jpg', 'Tasks: Practical coding and system development', '', '6aef1720593f4a36fe63387f')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Tata Data Visualisation -->
+            <div class="certificate-card reveal" data-cert-category="simulations">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Tata Data Visualisation Job Simulation', 'Tata • Forage', '../assets/images/certificates/tata-data-visualisation.jpg', 'Completed: September 27th, 2026 • Code: piGuZPQQ2dRYe7B5a')">
+                    <img src="../assets/images/certificates/tata-data-visualisation.jpg" alt="Tata Data Visualisation Certificate" loading="lazy">
+                    <span class="cert-badge">Job Simulation</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Visualisation: Empowering Business with Insights</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-chart-pie"></i> Tata • Forage</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Sep 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Visual Storytelling</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Tata Data Visualisation Job Simulation', 'Tata • Forage', '../assets/images/certificates/tata-data-visualisation.jpg', 'Tasks: Business scenario framing, visual selection, and executive storytelling', '', 'piGuZPQQ2dRYe7B5a')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. Cisco Data Science -->
+            <div class="certificate-card reveal" data-cert-category="cloud-ai">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Science Essentials with Python', 'Cisco Networking Academy', '../assets/images/certificates/cisco-data-science.jpg', 'Issued: October 2026')">
+                    <img src="../assets/images/certificates/cisco-data-science.jpg" alt="Cisco Data Science Certificate" loading="lazy">
+                    <span class="cert-badge">Cisco Academy</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Science Essentials with Python</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Python & Analytics</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Science Essentials with Python', 'Cisco Networking Academy', '../assets/images/certificates/cisco-data-science.jpg', 'Issued: October 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Cisco Data Analytics -->
+            <div class="certificate-card reveal" data-cert-category="analytics">
+                <div class="cert-thumb-wrapper" onclick="openCertificateModal('Data Analytics Essentials', 'Cisco Networking Academy', '../assets/images/certificates/cisco-data-analytics.jpg', 'Issued: October 2026')">
+                    <img src="../assets/images/certificates/cisco-data-analytics.jpg" alt="Cisco Data Analytics Certificate" loading="lazy">
+                    <span class="cert-badge">Cisco Academy</span>
+                    <div class="cert-overlay-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="cert-card-body">
+                    <h3>Data Analytics Essentials</h3>
+                    <p class="cert-issuer"><i class="fa-solid fa-chart-line"></i> Cisco Networking Academy</p>
+                    <div class="cert-meta">
+                        <span><i class="fa-regular fa-calendar"></i> Oct 2026</span>
+                        <span><i class="fa-solid fa-tag"></i> Data Transformation</span>
+                    </div>
+                    <div class="cert-actions">
+                        <button class="btn-cert-view" onclick="openCertificateModal('Data Analytics Essentials', 'Cisco Networking Academy', '../assets/images/certificates/cisco-data-analytics.jpg', 'Issued: October 2026')">
+                            <i class="fa-solid fa-expand"></i> View
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
 </section>
-
 </main>
 
-
 <footer class="footer">
-
     <div class="footer-bottom">
-
-        <p>
-            © 2026 Yash Chaudhari.
-            All Rights Reserved.
-        </p>
-
+        <p>&copy; <span id="currentYear"></span> Yash Chaudhari. All Rights Reserved.</p>
     </div>
-
 </footer>
 
-</body>
+<button id="scrollTop" class="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
+<!-- CERTIFICATE LIGHTBOX MODAL -->
+<div class="modal-backdrop" id="certModal" aria-hidden="true" role="dialog">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div>
+                <h3 class="modal-title" id="modalTitle">Certificate</h3>
+                <p class="modal-subtitle" id="modalIssuer">Issuer</p>
+            </div>
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close certificate viewer"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="modal-body">
+            <img id="modalImg" src="" alt="Certificate preview">
+        </div>
+        <div class="modal-footer">
+            <div class="modal-meta" id="modalMeta">Issued Date / Details</div>
+            <div class="modal-actions">
+                <a id="modalVerifyLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="display:none;">
+                    <i class="fa-solid fa-shield-check"></i>
+                    <span>Verify Online</span>
+                </a>
+                <button class="btn btn-outline btn-sm" id="modalDownloadBtn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span>Open High-Res</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="copy-toast" id="copyToast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">Notification</span>
+</div>
+
+<script src="../js/animations.js"></script>
+<script src="../js/main.js"></script>
+</body>
 </html>
